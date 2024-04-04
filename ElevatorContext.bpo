@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="30">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="18">
+        <org.eventb.core.poIdentifier name="DOORSTATUS" org.eventb.core.type="ℙ(DOORSTATUS)"/>
+        <org.eventb.core.poIdentifier name="FLOORS" org.eventb.core.type="ℙ(FLOORS)"/>
+        <org.eventb.core.poIdentifier name="CABINSTATUS" org.eventb.core.type="ℙ(CABINSTATUS)"/>
+        <org.eventb.core.poIdentifier name="CABINS" org.eventb.core.type="ℙ(CABINS)"/>
+        <org.eventb.core.poIdentifier name="DIRECTION" org.eventb.core.type="ℙ(DIRECTION)"/>
+        <org.eventb.core.poIdentifier name="MOTORSTATUS" org.eventb.core.type="ℙ(MOTORSTATUS)"/>
+        <org.eventb.core.poIdentifier name="FLOORBUTTONS" org.eventb.core.type="ℙ(FLOORBUTTONS)"/>
+        <org.eventb.core.poIdentifier name="SHAFTS" org.eventb.core.type="ℙ(SHAFTS)"/>
+        <org.eventb.core.poIdentifier name="FLOOR" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.poIdentifier name="CABINMOVING" org.eventb.core.type="CABINSTATUS"/>
+        <org.eventb.core.poIdentifier name="SHAFTTWO" org.eventb.core.type="SHAFTS"/>
+        <org.eventb.core.poIdentifier name="DIRECTIONUP" org.eventb.core.type="DIRECTION"/>
+        <org.eventb.core.poIdentifier name="MOTOROFF" org.eventb.core.type="MOTORSTATUS"/>
+        <org.eventb.core.poIdentifier name="CHANGE" org.eventb.core.type="ℙ(DIRECTION×DIRECTION)"/>
+        <org.eventb.core.poIdentifier name="MAXFLOOR" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="DOORHALFOPEN" org.eventb.core.type="DOORSTATUS"/>
+        <org.eventb.core.poIdentifier name="SHAFTONE" org.eventb.core.type="SHAFTS"/>
+        <org.eventb.core.poIdentifier name="MOTORON" org.eventb.core.type="MOTORSTATUS"/>
+        <org.eventb.core.poIdentifier name="DOOROPEN" org.eventb.core.type="DOORSTATUS"/>
+        <org.eventb.core.poIdentifier name="CABINSTATIONARY" org.eventb.core.type="CABINSTATUS"/>
+        <org.eventb.core.poIdentifier name="DOORCLOSED" org.eventb.core.type="DOORSTATUS"/>
+        <org.eventb.core.poIdentifier name="CABINIDLE" org.eventb.core.type="CABINSTATUS"/>
+        <org.eventb.core.poIdentifier name="DIRECTIONDOWN" org.eventb.core.type="DIRECTION"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Elevator-Coursework/ElevatorContext.bpo|org.eventb.core.poFile#ElevatorContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="30">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="finite(CABINS)" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln0xavKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="DIRECTION={DIRECTIONUP,DIRECTIONDOWN}" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln0xa_KVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="MAXFLOOR∈ℕ1" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln0xbPKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="FLOOR=0 ‥ MAXFLOOR" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln0xbfKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="DIRECTIONUP≠DIRECTIONDOWN" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln0xbvKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="SHAFTS={SHAFTONE,SHAFTTWO}" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln0xb_KVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="SHAFTONE≠SHAFTTWO" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1YcPKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="CHANGE∈DIRECTION ⤖ DIRECTION" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1YcfKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="CHANGE={DIRECTIONUP ↦ DIRECTIONDOWN,DIRECTIONDOWN ↦ DIRECTIONUP}" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1YcvKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="DOORSTATUS={DOOROPEN,DOORHALFOPEN,DOORCLOSED}" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1Yc_KVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="MOTORSTATUS={MOTORON,MOTOROFF}" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1YdPKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="MOTORON≠MOTOROFF" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1YdfKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="CABINSTATUS={CABINMOVING,CABINIDLE,CABINSTATIONARY}" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1YdvKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="CABINMOVING≠CABINIDLE∧CABINIDLE≠CABINSTATIONARY∧CABINSTATIONARY≠CABINMOVING" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1Yd_KVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="finite(DIRECTION)" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1YePKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="finite(FLOOR)" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1YefKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="finite(CABINSTATUS)" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1YevKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD17" org.eventb.core.predicate="finite(CHANGE)" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1Ye_KVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD18" org.eventb.core.predicate="finite(FLOORBUTTONS)" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1YfPKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD19" org.eventb.core.predicate="FLOOR≠(∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1_gPKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD20" org.eventb.core.predicate="finite(SHAFTS)" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1_gfKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD21" org.eventb.core.predicate="finite(DOORSTATUS)" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1_gvKVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD22" org.eventb.core.predicate="finite(MOTORSTATUS)" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1_g_KVEe6_e6i8toTwTA"/>
+        <org.eventb.core.poPredicate name="PRD23" org.eventb.core.predicate="finite(CABINSTATUS)" org.eventb.core.source="/Elevator-Coursework/ElevatorContext.buc|org.eventb.core.contextFile#ElevatorContext|org.eventb.core.axiom#_ln1_hPKVEe6_e6i8toTwTA"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

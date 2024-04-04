@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base" org.eventb.core.generated="false" version="3">
+    <org.eventb.core.carrierSet name="_ln0KUPKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="CABINS"/>
+    <org.eventb.core.carrierSet name="_ln0KUfKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="FLOORS"/>
+    <org.eventb.core.carrierSet name="_ln0KUvKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="FLOORBUTTONS"/>
+    <org.eventb.core.carrierSet name="_ln0KU_KVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="DIRECTION"/>
+    <org.eventb.core.carrierSet name="_ln0KVPKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="MOTORSTATUS"/>
+    <org.eventb.core.carrierSet name="_ln0KVfKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="CABINSTATUS"/>
+    <org.eventb.core.carrierSet name="_ln0KVvKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="DOORSTATUS"/>
+    <org.eventb.core.carrierSet name="_ln0KV_KVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="SHAFTS"/>
+    <org.eventb.core.constant name="_ln0KWPKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="MOTORON"/>
+    <org.eventb.core.constant name="_ln0KWfKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="MOTOROFF"/>
+    <org.eventb.core.constant name="_ln0KWvKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="CABINMOVING"/>
+    <org.eventb.core.constant name="_ln0KW_KVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="CABINIDLE"/>
+    <org.eventb.core.constant name="_ln0KXPKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="CABINSTATIONARY"/>
+    <org.eventb.core.constant name="_ln0xYPKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="DOOROPEN"/>
+    <org.eventb.core.constant name="_ln0xYfKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="DOORHALFOPEN"/>
+    <org.eventb.core.constant name="_ln0xYvKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="DOORCLOSED"/>
+    <org.eventb.core.constant name="_ln0xY_KVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="MAXFLOOR"/>
+    <org.eventb.core.constant name="_ln0xZPKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="DIRECTIONUP"/>
+    <org.eventb.core.constant name="_ln0xZfKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="DIRECTIONDOWN"/>
+    <org.eventb.core.constant name="_ln0xZvKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="FLOOR"/>
+    <org.eventb.core.constant name="_ln0xZ_KVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="SHAFTONE"/>
+    <org.eventb.core.constant name="_ln0xaPKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="SHAFTTWO"/>
+    <org.eventb.core.constant name="_ln0xafKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.identifier="CHANGE"/>
+    <org.eventb.core.axiom name="_ln0xavKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="axm1" org.eventb.core.predicate="finite (CABINS)"/>
+    <org.eventb.core.axiom name="_ln0xa_KVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="axm9" org.eventb.core.predicate="DIRECTION = {DIRECTIONUP,DIRECTIONDOWN}"/>
+    <org.eventb.core.axiom name="_ln0xbPKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="axm10" org.eventb.core.predicate="MAXFLOOR ∈ ℕ1"/>
+    <org.eventb.core.axiom name="_ln0xbfKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="axm11" org.eventb.core.predicate="FLOOR = 0‥MAXFLOOR"/>
+    <org.eventb.core.axiom name="_ln0xbvKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="axm12" org.eventb.core.predicate="DIRECTIONUP ≠ DIRECTIONDOWN"/>
+    <org.eventb.core.axiom name="_ln0xb_KVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="ax14" org.eventb.core.predicate="SHAFTS = {SHAFTONE,SHAFTTWO}"/>
+    <org.eventb.core.axiom name="_ln1YcPKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="ax15" org.eventb.core.predicate="SHAFTONE ≠ SHAFTTWO"/>
+    <org.eventb.core.axiom name="_ln1YcfKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="ax16" org.eventb.core.predicate="CHANGE ∈ DIRECTION ⤖ DIRECTION"/>
+    <org.eventb.core.axiom name="_ln1YcvKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="ax17" org.eventb.core.predicate="CHANGE = {DIRECTIONUP↦DIRECTIONDOWN, DIRECTIONDOWN ↦ DIRECTIONUP}"/>
+    <org.eventb.core.axiom name="_ln1Yc_KVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="ax18" org.eventb.core.predicate="DOORSTATUS = {DOOROPEN, DOORHALFOPEN, DOORCLOSED}"/>
+    <org.eventb.core.axiom name="_ln1YdPKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="ax19" org.eventb.core.predicate="MOTORSTATUS = {MOTORON, MOTOROFF}"/>
+    <org.eventb.core.axiom name="_ln1YdfKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="ax20" org.eventb.core.predicate="MOTORON ≠ MOTOROFF"/>
+    <org.eventb.core.axiom name="_ln1YdvKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="ax21" org.eventb.core.predicate="CABINSTATUS = {CABINMOVING, CABINIDLE, CABINSTATIONARY}"/>
+    <org.eventb.core.axiom name="_ln1Yd_KVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="ax22" org.eventb.core.predicate="CABINMOVING ≠ CABINIDLE ∧ CABINIDLE ≠ CABINSTATIONARY ∧ CABINSTATIONARY ≠ CABINMOVING"/>
+    <org.eventb.core.axiom name="_ln1YePKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="thm1" org.eventb.core.predicate="finite (DIRECTION)"/>
+    <org.eventb.core.axiom name="_ln1YefKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="thm2" org.eventb.core.predicate="finite (FLOOR)"/>
+    <org.eventb.core.axiom name="_ln1YevKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="thm3" org.eventb.core.predicate="finite (CABINSTATUS)"/>
+    <org.eventb.core.axiom name="_ln1Ye_KVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="thm4" org.eventb.core.predicate="finite (CHANGE)"/>
+    <org.eventb.core.axiom name="_ln1YfPKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="thm5" org.eventb.core.predicate="finite (FLOORBUTTONS)"/>
+    <org.eventb.core.axiom name="_ln1_gPKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="thm6" org.eventb.core.predicate="FLOOR ≠ ∅"/>
+    <org.eventb.core.axiom name="_ln1_gfKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="thm7" org.eventb.core.predicate="finite (SHAFTS)"/>
+    <org.eventb.core.axiom name="_ln1_gvKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="thm8" org.eventb.core.predicate="finite (DOORSTATUS)"/>
+    <org.eventb.core.axiom name="_ln1_g_KVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="thm9" org.eventb.core.predicate="finite (MOTORSTATUS)"/>
+    <org.eventb.core.axiom name="_ln1_hPKVEe6_e6i8toTwTA" org.eventb.core.generated="false" org.eventb.core.label="thm10" org.eventb.core.predicate="finite (CABINSTATUS)"/>
+</org.eventb.core.contextFile>
