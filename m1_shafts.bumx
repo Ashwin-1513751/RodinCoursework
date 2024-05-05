@@ -1,0 +1,116 @@
+machine m1_shafts
+refines m0_cabins
+sees ElevatorContext
+variables
+	shaft
+	direction
+	cabin
+	floor
+	cabinStatus
+    inBetweenFloorStatus
+    floorShaft 
+invariants
+	@typeof_shaft:  shaft ∈ cabin ⇸ SHAFTS    
+	@typeof_floorShaft: floorShaft ∈ FLOOR ⇸ SHAFTS  // occupied floors in a shaft   
+events 
+	event INITIALISATION extends INITIALISATION
+	then
+		@init_shaft: shaft ≔ ∅  //how to add cabins into any shaft ?
+		@init_floorShaft: floorShaft ≔ ∅
+	end
+	
+	
+	event CabinLeavesFloorGoingUp extends CabinLeavesFloorGoingUp
+	where
+		@grd8: c ∈ dom (shaft)
+		@grd9: shaft(c) = SHAFTONE
+		@grd10: (f + 1 ↦ SHAFTONE ) ∉ floorShaft  // there is not a cabin on the floor above
+	then
+		//remove current floor from floor shaft and add the new floor the cabin is moving to
+		@act5: floorShaft ≔ ( floorShaft ∖ {f ↦ SHAFTONE} ) ∪ (floorShaft ∪ {f + 1 ↦ SHAFTONE}) 
+	end
+	
+	
+	event CabinReachesFloorGoingUp extends CabinReachesFloorGoingUp
+	where
+		@grd7: c ∈ dom (shaft)
+		@grd8: shaft(c) = SHAFTONE
+	end
+	
+	event  CabinLeavesFloorGoingDown extends  CabinLeavesFloorGoingDown
+	where
+		@grd8: c ∈ dom (shaft)
+		@grd9: shaft(c) = SHAFTTWO
+		@grd10: (f − 1 ↦ SHAFTTWO ) ∉ floorShaft  // there is not a cabin on the floor below
+	then
+		//remove floor cabin is currently on from floorshaft and add the floor cabin is moving to
+		@act5: floorShaft ≔ ( floorShaft ∖ {f ↦ SHAFTTWO} ) ∪ (floorShaft ∪ {f − 1 ↦ SHAFTTWO})
+	end
+	
+	event CabinReachesFloorGoingDown  extends CabinReachesFloorGoingDown 
+	where
+		@grd7: c ∈ dom (shaft)
+		@grd8: shaft(c) = SHAFTTWO
+	end
+	
+	event  AddCabin extends  AddCabin
+	where
+		// there is not a cabin on floor 0 in shaft one
+		@grd2: (0 ↦ SHAFTONE) ∉ floorShaft
+	then
+		@act6: shaft ≔ shaft ∪ {c ↦ SHAFTONE}  //cabin is added from floor 0 in shaft 1
+		@act7: floorShaft ≔ floorShaft ∪ {0 ↦ SHAFTONE} 
+		
+	end
+	
+	event RemoveCabin extends RemoveCabin
+	where
+		@grd6: c ∈ dom (shaft)
+		@grd7: shaft(c) = SHAFTONE
+	then 
+		@act6: shaft ≔ {c} ⩤ shaft
+		@act7: floorShaft ≔ floorShaft ∖ {MAXFLOOR ↦ SHAFTONE}
+	end
+	
+	event CabinUpToDown 
+	any 
+		c
+	where
+		@grd1: c ∈ cabin
+		@grd2: c ∈ dom (direction)
+		@grd3: c ∈ dom (shaft)
+		@grd4: c ∈ dom (floor)
+		@grd5: direction(c) = DIRECTIONUP
+		@grd6: shaft (c) = SHAFTONE
+		@grd7: floor(c) = MAXFLOOR
+		//top floor in shaft 2 is empty 
+		@grd8: (MAXFLOOR ↦ SHAFTTWO) ∉ floorShaft
+	then 
+		@act1: shaft (c) ≔ SHAFTTWO
+		@act2: direction (c) ≔ DIRECTIONDOWN
+		//same floor different shaft	
+		@act3: floorShaft ≔ ( floorShaft ∖ {floor(c) ↦ SHAFTONE} ) ∪ (floorShaft ∪ {floor(c) ↦ SHAFTTWO})
+	end
+		
+	event CabinDownToUp
+	any 
+		c
+	where
+		@grd1: c ∈ cabin
+		@grd2: c ∈ dom (direction)
+		@grd3: c ∈ dom (shaft)
+		@grd4: c ∈ dom (floor)
+		@grd5: direction (c) = DIRECTIONDOWN
+		@grd6: shaft(c) = SHAFTTWO
+		@grd7: floor (c) = 0
+		//bottom floor in shaft 1 is empty
+		@grd8: (0 ↦ SHAFTONE) ∉ floorShaft
+	then 
+		@act1: shaft (c) ≔ SHAFTONE
+		@act2: direction (c) ≔ DIRECTIONUP
+		//same floor different shaft
+		@act3: floorShaft ≔ ( floorShaft ∖ {floor(c) ↦ SHAFTTWO} ) ∪ (floorShaft ∪ {floor(c) ↦ SHAFTONE})
+	
+	end
+	
+end

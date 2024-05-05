@@ -1,0 +1,128 @@
+machine m0_cabins
+sees ElevatorContext
+variables
+	cabin
+	floor // floor cabin is on
+	cabinStatus 
+	direction // cabin is going up or down
+    inBetweenFloorStatus // cabin is in between two floors or at a floor
+invariants	
+	@typeof_cabin: cabin ⊆ CABINS
+	@typeof_direction: direction ∈ cabin ⇸ DIRECTION 
+	@typeof_cabinStatus: cabinStatus ∈ cabin ⇸ CABINSTATUS
+	@typeof_floor: floor ∈ cabin ⇸ FLOOR
+	@typeof_inBetweenFloorStatus: inBetweenFloorStatus ∈ cabin ⇸ INBETWEENFLOORSTATUS
+	
+	
+events 
+	event INITIALISATION
+	then
+		@init_floor: floor ≔ ∅
+		@init_cabin: cabin ≔ ∅  // how to create cabins and init floor positions ?
+		@init_direction: direction ≔ ∅
+		@init_cabinStatus: cabinStatus ≔ ∅ 
+		@init_inBetweenFloorStatus: inBetweenFloorStatus ≔ ∅
+	end
+
+	event CabinLeavesFloorGoingUp  
+	any 
+		c //cabin
+		f // floor the cabin is on
+	where 
+		@grd1: c ∈ cabin
+		@grd2: c ∈ dom (floor)
+		@grd3: c ∈ dom (inBetweenFloorStatus)
+		@grd4: f ∈ FLOOR 
+		@grd5: f = floor(c)
+		@grd6: f ≠ MAXFLOOR //cannot go up if on top floor	
+		@grd7: inBetweenFloorStatus (c) = ATFLOOR
+		//@grd5: cabinStatus (c) = CABINSTOPPED
+	then    
+		@act1: direction(c) ≔ DIRECTIONUP
+		@act2: floor(c) ≔ f+1 //move up
+		@act3: cabinStatus (c) ≔ CABINMOVING
+		@act4: inBetweenFloorStatus (c) ≔ INBETWEENFLOOR
+	end
+
+	event CabinReachesFloorGoingUp 
+	any 
+		c
+	where 
+		@grd1: c ∈ cabin
+		@grd2: c ∈ dom (direction)
+		@grd3: c ∈ dom (inBetweenFloorStatus)
+		@grd4: direction(c) = DIRECTIONUP
+		@grd5: inBetweenFloorStatus (c) = INBETWEENFLOOR
+		//@grd2: cabinStatus (c) = CABINMOVING
+	then 
+		@act1:cabinStatus (c) ≔ CABINSTATIONARY  //cabin stops at floor	
+		@act2: inBetweenFloorStatus (c) ≔ ATFLOOR
+	end
+	
+	event CabinLeavesFloorGoingDown
+	any 
+		c //cabin
+		f // floor the cabin is on
+	where 
+		@grd1: c ∈ cabin
+		@grd2: c ∈ dom (floor)
+		@grd3: c ∈ dom (inBetweenFloorStatus)
+		@grd4: f ∈ FLOOR
+		@grd5: f = floor(c)
+		@grd6: f ≠ 0 //cannot go down if on bottom floor	
+		@grd7: inBetweenFloorStatus (c) = ATFLOOR
+	then    
+		@act1: direction(c) ≔ DIRECTIONDOWN
+		@act2: floor(c) ≔ f −1 //move down
+		@act3: cabinStatus (c) ≔ CABINMOVING
+		@act4: inBetweenFloorStatus (c) ≔ INBETWEENFLOOR	
+	end
+
+	event CabinReachesFloorGoingDown 
+	any 
+		c
+	where 
+		@grd1: c ∈ cabin
+		@grd2: c ∈ dom (direction)
+		@grd3: c ∈ dom (inBetweenFloorStatus)
+		@grd4: direction(c) = DIRECTIONDOWN
+		@grd5: inBetweenFloorStatus (c) = INBETWEENFLOOR
+		//@grd2: cabinStatus (c) = CABINMOVING
+	then 
+		@act1:cabinStatus (c) ≔ CABINSTATIONARY  //cabin stops at floor	
+		@act2: inBetweenFloorStatus (c) ≔ ATFLOOR
+	end
+
+	event AddCabin
+	any 
+		c
+	where
+		@grd1: c ∈ CABINS∖cabin 
+	then 
+		@act1:cabin ≔ cabin ∪ {c} //add cabin
+		@act2: floor ≔ floor ∪ {c ↦ 0} //cabin is added from floor 0 
+		@act3: direction ≔ direction ∪ {c ↦ DIRECTIONUP} //cabin is going up	
+		@act4: inBetweenFloorStatus ≔ inBetweenFloorStatus ∪ {c ↦ ATFLOOR} 
+		@act5: cabinStatus ≔ cabinStatus ∪ {c ↦ CABINIDLE}
+	end
+	
+	event RemoveCabin
+	any 
+		c
+	where 
+		@grd1:  c ∈ cabin
+		@grd2: c ∈ dom (direction)
+		@grd3: c ∈ dom (floor) 
+		@grd4: direction (c) = DIRECTIONUP //cabin is going up
+		@grd5: floor (c) = MAXFLOOR //cabin is at top floor
+	then 
+		@act1: cabin ≔ cabin ∖ {c}
+		@act2: floor ≔ {c} ⩤ floor
+		@act3: direction ≔ {c} ⩤ direction
+		@act4: cabinStatus ≔ {c} ⩤ cabinStatus
+		@act5: inBetweenFloorStatus ≔ {c} ⩤ inBetweenFloorStatus
+	end
+	
+	
+
+end
