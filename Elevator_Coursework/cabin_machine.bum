@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1714934055709" org.eventb.texttools.text_representation="machine m0_cabin_machine sees cabin_context &#10;&#10;variables floor &#10;&#10;invariants&#10;  @cabin_map floor ∈ CABINS → FLOORS&#10;&#10;events&#10;  event INITIALISATION&#10;    then&#10;      @floor_notempty floor ≔ ∅&#10;  end&#10;&#10;  event CABIN_GOES_UP&#10;    any Cabin Floor &#10;    where&#10;      @is_cabin Cabin ∈ CABINS&#10;      @cabin_to_floor Cabin → Floor ∈ floor&#10;      @check_floor floor(Cabin) = Floor&#10;      @not_top_floor Floor ≠ TOP_FLOOR&#10;      @floor Floor + 1 ∉ ran(floor)&#10;    then&#10;      @floor_up floor(Cabin) ≔ Floor + 1&#10;  end&#10;&#10;  event CABIN_GOES_DOWN&#10;    any Cabin Floor &#10;    where&#10;      @is_cabin Cabin ∈ CABINS&#10;      @cabin_to_floor Cabin → Floor ∈ floor&#10;      @check_floor floor(Cabin) = Floor&#10;      @floor_not_zero Floor ≠ 0&#10;      @not_lowest Floor − 1 ∉ ran(floor)&#10;    then&#10;      @floor_down floor(Cabin) ≔ Floor − 1&#10;  end&#10;&#10;  event ADD_CABIN&#10;    any Cabin &#10;    where&#10;      @is_cabin Cabin ∈ CABINS&#10;      @not_zero 0  ∉ ran(floor)&#10;      @cabin_not_on_floor Cabin ∉ dom(floor)&#10;    then&#10;      @add_cabin floor ≔ floor ∪ {Cabin ↦ 0 }&#10;  end&#10;&#10;  event REMOVE_CABIN&#10;    any Cabin Floor &#10;    where&#10;      @is_cabin Cabin ∈ CABINS&#10;      @cabin_to_floor Cabin → Floor ∈ floor&#10;      @check_floor floor(Cabin) = Floor&#10;      @check_top Floor = TOP_FLOOR&#10;    then&#10;      @remove_cabin floor ≔ {Cabin} ⩤ floor&#10;  end&#10;end&#10;" version="5">
+    <org.eventb.core.seesContext name="_jrd88AsAEe-EooyZ_2IkvA" org.eventb.core.target="cabin_context"/>
+    <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_S0_SkAsBEe-EooyZ_2IkvA" org.eventb.core.assignment="floor ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="floor_notempty"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="_v4vLEAsAEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="floor"/>
+    <org.eventb.core.invariant name="_v4vLEQsAEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="cabin_map" org.eventb.core.predicate="floor ∈ CABINS → FLOORS"/>
+    <org.eventb.core.event name="_XLXyEAsDEe-EooyZ_2IkvA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="CABIN_GOES_UP">
+        <org.eventb.core.parameter name="_XLXyEQsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="Cabin"/>
+        <org.eventb.core.parameter name="_XLXyEgsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="Floor"/>
+        <org.eventb.core.guard name="_XLXyEwsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="is_cabin" org.eventb.core.predicate="Cabin ∈ CABINS"/>
+        <org.eventb.core.guard name="_XLXyFAsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="cabin_to_floor" org.eventb.core.predicate="Cabin → Floor ∈ floor"/>
+        <org.eventb.core.guard name="_XLXyFQsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="check_floor" org.eventb.core.predicate="floor(Cabin) = Floor"/>
+        <org.eventb.core.guard name="_XLXyFgsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="not_top_floor" org.eventb.core.predicate="Floor ≠ TOP_FLOOR"/>
+        <org.eventb.core.guard name="_XLXyFwsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="floor" org.eventb.core.predicate="Floor + 1 ∉ ran(floor)"/>
+        <org.eventb.core.action name="_XLXyGAsDEe-EooyZ_2IkvA" org.eventb.core.assignment="floor(Cabin) ≔ Floor + 1" org.eventb.core.generated="false" org.eventb.core.label="floor_up"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_XLXyGQsDEe-EooyZ_2IkvA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="CABIN_GOES_DOWN">
+        <org.eventb.core.parameter name="_XLXyGgsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="Cabin"/>
+        <org.eventb.core.parameter name="_XLXyGwsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="Floor"/>
+        <org.eventb.core.guard name="_XLXyHAsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="is_cabin" org.eventb.core.predicate="Cabin ∈ CABINS"/>
+        <org.eventb.core.guard name="_XLXyHQsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="cabin_to_floor" org.eventb.core.predicate="Cabin → Floor ∈ floor"/>
+        <org.eventb.core.guard name="_XLXyHgsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="check_floor" org.eventb.core.predicate="floor(Cabin) = Floor"/>
+        <org.eventb.core.guard name="_XLXyHwsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="floor_not_zero" org.eventb.core.predicate="Floor ≠ 0"/>
+        <org.eventb.core.guard name="_XLXyIAsDEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="not_lowest" org.eventb.core.predicate="Floor − 1 ∉ ran(floor)"/>
+        <org.eventb.core.action name="_XLXyIQsDEe-EooyZ_2IkvA" org.eventb.core.assignment="floor(Cabin) ≔ Floor − 1" org.eventb.core.generated="false" org.eventb.core.label="floor_down"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_cNpuQAsFEe-EooyZ_2IkvA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="ADD_CABIN">
+        <org.eventb.core.parameter name="_cNpuQQsFEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="Cabin"/>
+        <org.eventb.core.guard name="_cNpuQgsFEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="is_cabin" org.eventb.core.predicate="Cabin ∈ CABINS"/>
+        <org.eventb.core.guard name="_cNpuQwsFEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="not_zero" org.eventb.core.predicate="0  ∉ ran(floor)"/>
+        <org.eventb.core.guard name="_cNpuRAsFEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="cabin_not_on_floor" org.eventb.core.predicate="Cabin ∉ dom(floor)"/>
+        <org.eventb.core.action name="_cNpuRQsFEe-EooyZ_2IkvA" org.eventb.core.assignment="floor ≔ floor ∪ {Cabin ↦ 0 }" org.eventb.core.generated="false" org.eventb.core.label="add_cabin"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_cNpuRgsFEe-EooyZ_2IkvA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="REMOVE_CABIN">
+        <org.eventb.core.parameter name="_cNpuRwsFEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="Cabin"/>
+        <org.eventb.core.parameter name="_cNpuSAsFEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="Floor"/>
+        <org.eventb.core.guard name="_cNpuSQsFEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="is_cabin" org.eventb.core.predicate="Cabin ∈ CABINS"/>
+        <org.eventb.core.guard name="_cNpuSgsFEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="cabin_to_floor" org.eventb.core.predicate="Cabin → Floor ∈ floor"/>
+        <org.eventb.core.guard name="_cNpuSwsFEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="check_floor" org.eventb.core.predicate="floor(Cabin) = Floor"/>
+        <org.eventb.core.guard name="_cNpuTAsFEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="check_top" org.eventb.core.predicate="Floor = TOP_FLOOR"/>
+        <org.eventb.core.action name="_cNpuTQsFEe-EooyZ_2IkvA" org.eventb.core.assignment="floor ≔ {Cabin} ⩤ floor" org.eventb.core.generated="false" org.eventb.core.label="remove_cabin"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

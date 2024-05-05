@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase">
+    <org.eventb.core.scAxiom name="'" org.eventb.core.label="fixed_motors" org.eventb.core.predicate="finite(MOTOR_STATUS)" org.eventb.core.source="/Elevator_Coursework/motors_context.buc|org.eventb.core.contextFile#motors_context|org.eventb.core.axiom#_CKy4EAr_Ee-EooyZ_2IkvA" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scAxiom name="(" org.eventb.core.label="motor_status" org.eventb.core.predicate="partition(MOTOR_STATUS,{MOTOR_ON},{MOTOR_OFF})" org.eventb.core.source="/Elevator_Coursework/motors_context.buc|org.eventb.core.contextFile#motors_context|org.eventb.core.axiom#_CKy4EQr_Ee-EooyZ_2IkvA" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scConstant name="MOTOR_OFF" org.eventb.core.source="/Elevator_Coursework/motors_context.buc|org.eventb.core.contextFile#motors_context|org.eventb.core.constant#_vCtz8gr-Ee-EooyZ_2IkvA" org.eventb.core.type="MOTOR_STATUS"/>
+    <org.eventb.core.scCarrierSet name="MOTOR_STATUS" org.eventb.core.source="/Elevator_Coursework/motors_context.buc|org.eventb.core.contextFile#motors_context|org.eventb.core.carrierSet#_vCtz8Ar-Ee-EooyZ_2IkvA" org.eventb.core.type="ℙ(MOTOR_STATUS)"/>
+    <org.eventb.core.scConstant name="MOTOR_ON" org.eventb.core.source="/Elevator_Coursework/motors_context.buc|org.eventb.core.contextFile#motors_context|org.eventb.core.constant#_vCtz8Qr-Ee-EooyZ_2IkvA" org.eventb.core.type="MOTOR_STATUS"/>
+</org.eventb.core.scContextFile>

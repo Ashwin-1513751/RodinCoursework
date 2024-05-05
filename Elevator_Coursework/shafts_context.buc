@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1714930857847" org.eventb.texttools.text_representation="context shafts_context&#10;&#10;sets SHAFTS&#10;&#10;constants SHAFT_UP SHAFT_DOWN&#10;&#10;axioms&#10;@fixed_shafts finite(SHAFTS)&#10;@shaft_status partition(SHAFTS ,{SHAFT_UP}, {SHAFT_DOWN})&#10;&#10;&#10;end&#10;" version="3">
+    <org.eventb.core.carrierSet name="_N-F8cAr-Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="SHAFTS"/>
+    <org.eventb.core.constant name="_N-F8cQr-Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="SHAFT_UP"/>
+    <org.eventb.core.constant name="_N-F8cgr-Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="SHAFT_DOWN"/>
+    <org.eventb.core.axiom name="_N-F8cwr-Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="fixed_shafts" org.eventb.core.predicate="finite(SHAFTS)"/>
+    <org.eventb.core.axiom name="_N-F8dAr-Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="shaft_status" org.eventb.core.predicate="partition(SHAFTS ,{SHAFT_UP}, {SHAFT_DOWN})"/>
+</org.eventb.core.contextFile>

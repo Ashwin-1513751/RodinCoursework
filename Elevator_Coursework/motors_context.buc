@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1714931196991" org.eventb.texttools.text_representation="context motors_context&#10;&#10;sets MOTOR_STATUS&#10;&#10;constants&#10;MOTOR_ON&#10;MOTOR_OFF&#10;&#10;axioms&#10;@fixed_motors finite(MOTOR_STATUS)&#10;@motor_status partition(MOTOR_STATUS , {MOTOR_ON}, {MOTOR_OFF})&#10;&#10;&#10;end&#10;" version="3">
+    <org.eventb.core.carrierSet name="_vCtz8Ar-Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="MOTOR_STATUS"/>
+    <org.eventb.core.constant name="_vCtz8Qr-Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="MOTOR_ON"/>
+    <org.eventb.core.constant name="_vCtz8gr-Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="MOTOR_OFF"/>
+    <org.eventb.core.axiom name="_CKy4EAr_Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="fixed_motors" org.eventb.core.predicate="finite(MOTOR_STATUS)"/>
+    <org.eventb.core.axiom name="_CKy4EQr_Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="motor_status" org.eventb.core.predicate="partition(MOTOR_STATUS , {MOTOR_ON}, {MOTOR_OFF})"/>
+</org.eventb.core.contextFile>

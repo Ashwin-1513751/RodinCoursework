@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1714931554362" org.eventb.texttools.text_representation="context doors_context&#10;&#10;sets DOOR_STATUS&#10;&#10;constants&#10;DOOR_OPEN&#10;DOOR_HALFOPEN&#10;DOOR_CLOSED&#10;&#10;axioms&#10;&#10;@fixed_doors finite(DOOR_STATUS)&#10;@door_status partition(DOOR_STATUS, {DOOR_OPEN}, {DOOR_HALFOPEN}, {DOOR_CLOSED})&#10;&#10;&#10;end&#10;" version="3">
+    <org.eventb.core.carrierSet name="_qfVS4Ar_Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="DOOR_STATUS"/>
+    <org.eventb.core.constant name="_qfVS4Qr_Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="DOOR_OPEN"/>
+    <org.eventb.core.constant name="_qfVS4gr_Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="DOOR_HALFOPEN"/>
+    <org.eventb.core.constant name="_qfVS4wr_Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="DOOR_CLOSED"/>
+    <org.eventb.core.axiom name="_qfVS5Ar_Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="fixed_doors" org.eventb.core.predicate="finite(DOOR_STATUS)"/>
+    <org.eventb.core.axiom name="_qfVS5Qr_Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="door_status" org.eventb.core.predicate="partition(DOOR_STATUS, {DOOR_OPEN}, {DOOR_HALFOPEN}, {DOOR_CLOSED})"/>
+</org.eventb.core.contextFile>

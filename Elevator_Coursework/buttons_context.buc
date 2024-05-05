@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1714931676700" org.eventb.texttools.text_representation="context buttons_context&#10;&#10;sets BUTTONS&#10;&#10;end&#10;" version="3">
+    <org.eventb.core.carrierSet name="_J8bL4AsAEe-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.identifier="BUTTONS"/>
+</org.eventb.core.contextFile>

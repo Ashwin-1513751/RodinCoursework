@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1714930602358" org.eventb.texttools.text_representation="context cabin_context&#10;&#10;sets CABINS CABINSTATUS&#10;&#10;&#10;constants&#10;FLOORS&#10;TOP_FLOOR&#10;CURRENT_FLOOR_CABIN&#10;&#10;axioms&#10;@top_floor_value TOP_FLOOR ∈ ℕ1&#10;@floors FLOORS = 0‥TOP_FLOOR&#10;@fixed_cabins finite(CABINS)&#10;@num_of_floors card(FLOORS) = TOP_FLOOR + 1&#10;@fixed_floors finite(FLOORS)&#10;@max_cabins card(CABINS) &lt; (card(FLOORS)∗2)&#10;@cabin_to_floor CURRENT_FLOOR_CABIN ∈ CABINS → FLOORS&#10;@collision_avoidance ∀a·a ∈ dom(CURRENT_FLOOR_CABIN) ⇒  CURRENT_FLOOR_CABIN(a) ∉ ran({a} ⩤ CURRENT_FLOOR_CABIN)&#10;&#10;end&#10;" version="3">
+    <org.eventb.core.carrierSet name="_a7Oa4Ar2Ee-FJtpNp7Wqig" org.eventb.core.generated="false" org.eventb.core.identifier="CABINS"/>
+    <org.eventb.core.carrierSet name="_a7Oa4Qr2Ee-FJtpNp7Wqig" org.eventb.core.generated="false" org.eventb.core.identifier="CABINSTATUS"/>
+    <org.eventb.core.constant name="_a7PB8Ar2Ee-FJtpNp7Wqig" org.eventb.core.generated="false" org.eventb.core.identifier="FLOORS"/>
+    <org.eventb.core.constant name="_a7PB8Qr2Ee-FJtpNp7Wqig" org.eventb.core.generated="false" org.eventb.core.identifier="TOP_FLOOR"/>
+    <org.eventb.core.constant name="_a7PB8gr2Ee-FJtpNp7Wqig" org.eventb.core.generated="false" org.eventb.core.identifier="CURRENT_FLOOR_CABIN"/>
+    <org.eventb.core.axiom name="_a7PB8wr2Ee-FJtpNp7Wqig" org.eventb.core.generated="false" org.eventb.core.label="top_floor_value" org.eventb.core.predicate="TOP_FLOOR ∈ ℕ1"/>
+    <org.eventb.core.axiom name="_a7PB9Ar2Ee-FJtpNp7Wqig" org.eventb.core.generated="false" org.eventb.core.label="floors" org.eventb.core.predicate="FLOORS = 0‥TOP_FLOOR"/>
+    <org.eventb.core.axiom name="_c9Z4kAr3Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="fixed_cabins" org.eventb.core.predicate="finite(CABINS)"/>
+    <org.eventb.core.axiom name="_tWVO0Ar3Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="num_of_floors" org.eventb.core.predicate="card(FLOORS) = TOP_FLOOR + 1"/>
+    <org.eventb.core.axiom name="_pgMqwAr3Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="fixed_floors" org.eventb.core.predicate="finite(FLOORS)"/>
+    <org.eventb.core.axiom name="_GmWhkAr4Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="max_cabins" org.eventb.core.predicate="card(CABINS) &lt; (card(FLOORS)∗2)"/>
+    <org.eventb.core.axiom name="_on4GMAr4Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="cabin_to_floor" org.eventb.core.predicate="CURRENT_FLOOR_CABIN ∈ CABINS → FLOORS"/>
+    <org.eventb.core.axiom name="_axC8cAr8Ee-EooyZ_2IkvA" org.eventb.core.generated="false" org.eventb.core.label="collision_avoidance" org.eventb.core.predicate="∀a·a ∈ dom(CURRENT_FLOOR_CABIN) ⇒  CURRENT_FLOOR_CABIN(a) ∉ ran({a} ⩤ CURRENT_FLOOR_CABIN)"/>
+</org.eventb.core.contextFile>
