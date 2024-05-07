@@ -1,0 +1,10 @@
+context shafts_context
+sets
+	SHAFTS
+constants
+	SHAFT_UP
+	SHAFT_DOWN
+axioms
+	@fixed_shafts: finite(SHAFTS)
+	@shaft_status: partition(SHAFTS ,{SHAFT_UP}, {SHAFT_DOWN})
+end

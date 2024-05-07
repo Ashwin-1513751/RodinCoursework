@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="CABINSTATUS" org.eventb.core.type="ℙ(CABINSTATUS)"/>
+        <org.eventb.core.poIdentifier name="CABINS" org.eventb.core.type="ℙ(CABINS)"/>
+        <org.eventb.core.poIdentifier name="DIRECTION" org.eventb.core.type="ℙ(DIRECTION)"/>
+        <org.eventb.core.poIdentifier name="INBETWEENFLOORSTATUS" org.eventb.core.type="ℙ(INBETWEENFLOORSTATUS)"/>
+        <org.eventb.core.poIdentifier name="INBETWEENFLOOR" org.eventb.core.type="INBETWEENFLOORSTATUS"/>
+        <org.eventb.core.poIdentifier name="CURRENT_FLOOR_CABIN" org.eventb.core.type="ℙ(CABINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="FLOORS" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.poIdentifier name="ATFLOOR" org.eventb.core.type="INBETWEENFLOORSTATUS"/>
+        <org.eventb.core.poIdentifier name="UP" org.eventb.core.type="DIRECTION"/>
+        <org.eventb.core.poIdentifier name="TOP_FLOOR" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="MOVING" org.eventb.core.type="CABINSTATUS"/>
+        <org.eventb.core.poIdentifier name="DOWN" org.eventb.core.type="DIRECTION"/>
+        <org.eventb.core.poIdentifier name="STOPPED" org.eventb.core.type="CABINSTATUS"/>
+        <org.eventb.core.poPredicate name="INBETWEENFLOORSTATUT" org.eventb.core.predicate="TOP_FLOOR∈ℕ1" org.eventb.core.source="/ElevatorCoursework/cabin_context.buc|org.eventb.core.contextFile#cabin_context|org.eventb.core.axiom#_9OSoQgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="INBETWEENFLOORSTATUU" org.eventb.core.predicate="FLOORS=0 ‥ TOP_FLOOR" org.eventb.core.source="/ElevatorCoursework/cabin_context.buc|org.eventb.core.contextFile#cabin_context|org.eventb.core.axiom#_9OTPUAyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="INBETWEENFLOORSTATUV" org.eventb.core.predicate="finite(CABINS)" org.eventb.core.source="/ElevatorCoursework/cabin_context.buc|org.eventb.core.contextFile#cabin_context|org.eventb.core.axiom#_9OTPUQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="INBETWEENFLOORSTATUW" org.eventb.core.predicate="card(FLOORS)=TOP_FLOOR+1" org.eventb.core.source="/ElevatorCoursework/cabin_context.buc|org.eventb.core.contextFile#cabin_context|org.eventb.core.axiom#_9OTPUgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="INBETWEENFLOORSTATUX" org.eventb.core.predicate="finite(FLOORS)" org.eventb.core.source="/ElevatorCoursework/cabin_context.buc|org.eventb.core.contextFile#cabin_context|org.eventb.core.axiom#_9OTPUwyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="INBETWEENFLOORSTATUY" org.eventb.core.predicate="card(CABINS)&lt;card(FLOORS)∗2" org.eventb.core.source="/ElevatorCoursework/cabin_context.buc|org.eventb.core.contextFile#cabin_context|org.eventb.core.axiom#_9OT2YAyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="INBETWEENFLOORSTATUZ" org.eventb.core.predicate="CURRENT_FLOOR_CABIN∈CABINS → FLOORS" org.eventb.core.source="/ElevatorCoursework/cabin_context.buc|org.eventb.core.contextFile#cabin_context|org.eventb.core.axiom#_9OT2YQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="INBETWEENFLOORSTATU[" org.eventb.core.predicate="∀a⦂CABINS·a∈dom(CURRENT_FLOOR_CABIN)⇒CURRENT_FLOOR_CABIN(a)∉ran({a} ⩤ CURRENT_FLOOR_CABIN)" org.eventb.core.source="/ElevatorCoursework/cabin_context.buc|org.eventb.core.contextFile#cabin_context|org.eventb.core.axiom#_9OT2YgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="INBETWEENFLOORSTATU\" org.eventb.core.predicate="partition(INBETWEENFLOORSTATUS,{INBETWEENFLOOR},{ATFLOOR})" org.eventb.core.source="/ElevatorCoursework/cabin_context.buc|org.eventb.core.contextFile#cabin_context|org.eventb.core.axiom#_9OUdcAyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="INBETWEENFLOORSTATU]" org.eventb.core.predicate="partition(DIRECTION,{UP},{DOWN})" org.eventb.core.source="/ElevatorCoursework/cabin_context.buc|org.eventb.core.contextFile#cabin_context|org.eventb.core.axiom#_9OUdcQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="INBETWEENFLOORSTATU^" org.eventb.core.predicate="finite(CABINSTATUS)" org.eventb.core.source="/ElevatorCoursework/cabin_context.buc|org.eventb.core.contextFile#cabin_context|org.eventb.core.axiom#_9OUdcgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="INBETWEENFLOORSTATU_" org.eventb.core.predicate="partition(CABINSTATUS,{MOVING},{STOPPED})" org.eventb.core.source="/ElevatorCoursework/cabin_context.buc|org.eventb.core.contextFile#cabin_context|org.eventb.core.axiom#_9OUdcwyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="floor" org.eventb.core.type="ℙ(CABINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="inBetweenFloorStatus" org.eventb.core.type="ℙ(CABINS×INBETWEENFLOORSTATUS)"/>
+        <org.eventb.core.poIdentifier name="cabin" org.eventb.core.type="ℙ(CABINS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="INITIALISATION/typeof_floor/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTALLHYPinBetweenFloorStatut"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(CABINS×ℤ))∈(∅ ⦂ ℙ(CABINS)) → FLOORS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LBR0AyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poSequent#INITIALISATION\/typeof_floor\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/typeof_inBetweenFloorStatus/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTALLHYPinBetweenFloorStatut"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(CABINS×INBETWEENFLOORSTATUS))∈(∅ ⦂ ℙ(CABINS)) → INBETWEENFLOORSTATUS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LBR0AyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poSequent#INITIALISATION\/typeof_inBetweenFloorStatus\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTinBetweenFloorStatut" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="floor'" org.eventb.core.type="ℙ(CABINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="inBetweenFloorStatus'" org.eventb.core.type="ℙ(CABINS×INBETWEENFLOORSTATUS)"/>
+        <org.eventb.core.poIdentifier name="cabin'" org.eventb.core.type="ℙ(CABINS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPinBetweenFloorStatut" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTIDENTinBetweenFloorStatut" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poSequent name="CabinLeavesFloorGoingUp/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuu)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈dom(floor)∧floor∈CABINS ⇸ ℤ" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LB44QyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LDHAQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LB44QyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LDHAQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuu)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CabinLeavesFloorGoingUp/grd6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuu+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈dom(inBetweenFloorStatus)∧inBetweenFloorStatus∈CABINS ⇸ INBETWEENFLOORSTATUS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LB44QyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LDHAwyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LB44QyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LDHAwyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuu+"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CabinLeavesFloorGoingUp/typeof_floor/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTALLHYPinBetweenFloorStatuu"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="floor{c ↦ f+1}∈cabin → FLOORS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LB44QyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poSequent#CabinLeavesFloorGoingUp\/typeof_floor\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CabinLeavesFloorGoingUp/typeof_inBetweenFloorStatus/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTALLHYPinBetweenFloorStatuu"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="inBetweenFloorStatus{c ↦ INBETWEENFLOOR}∈cabin → INBETWEENFLOORSTATUS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LB44QyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poSequent#CabinLeavesFloorGoingUp\/typeof_inBetweenFloorStatus\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTinBetweenFloorStatuu" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="f" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="c" org.eventb.core.type="CABINS"/>
+        <org.eventb.core.poIdentifier name="floor'" org.eventb.core.type="ℙ(CABINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="inBetweenFloorStatus'" org.eventb.core.type="ℙ(CABINS×INBETWEENFLOORSTATUS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPinBetweenFloorStatuu)" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTIDENTinBetweenFloorStatuu" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈cabin" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LB44QyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LCf8gyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c∈dom(floor)" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LB44QyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LCf8wyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="f∈FLOORS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LB44QyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LDHAAyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPinBetweenFloorStatuu+" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuu)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="f=floor(c)" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LB44QyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LDHAQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="f≠TOP_FLOOR" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LB44QyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LDHAgyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPinBetweenFloorStatuu" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuu+" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="inBetweenFloorStatus(c)=ATFLOOR" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LB44QyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LDHAwyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="CabinReachesFloorGoingUp/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuv("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈dom(inBetweenFloorStatus)∧inBetweenFloorStatus∈CABINS ⇸ INBETWEENFLOORSTATUS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LDuEgyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LEVIgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LDuEgyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LEVIgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuv("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CabinReachesFloorGoingUp/typeof_inBetweenFloorStatus/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTALLHYPinBetweenFloorStatuv"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="inBetweenFloorStatus{c ↦ ATFLOOR}∈cabin → INBETWEENFLOORSTATUS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LDuEgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poSequent#CabinReachesFloorGoingUp\/typeof_inBetweenFloorStatus\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTinBetweenFloorStatuv" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="c" org.eventb.core.type="CABINS"/>
+        <org.eventb.core.poIdentifier name="inBetweenFloorStatus'" org.eventb.core.type="ℙ(CABINS×INBETWEENFLOORSTATUS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPinBetweenFloorStatuv(" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTIDENTinBetweenFloorStatuv" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈cabin" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LDuEgyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LEVIAyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c∈dom(inBetweenFloorStatus)" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LDuEgyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LEVIQyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPinBetweenFloorStatuv" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuv(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="inBetweenFloorStatus(c)=INBETWEENFLOOR" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LDuEgyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LEVIgyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="CabinLeavesFloorGoingDown/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuw)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈dom(floor)∧floor∈CABINS ⇸ ℤ" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LE8MAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LFjQwyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LE8MAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LFjQwyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuw)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CabinLeavesFloorGoingDown/grd6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuw+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈dom(inBetweenFloorStatus)∧inBetweenFloorStatus∈CABINS ⇸ INBETWEENFLOORSTATUS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LE8MAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LGKUQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LE8MAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LGKUQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuw+"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CabinLeavesFloorGoingDown/typeof_floor/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTALLHYPinBetweenFloorStatuw"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="floor{c ↦ f − 1}∈cabin → FLOORS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LE8MAyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poSequent#CabinLeavesFloorGoingDown\/typeof_floor\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CabinLeavesFloorGoingDown/typeof_inBetweenFloorStatus/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTALLHYPinBetweenFloorStatuw"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="inBetweenFloorStatus{c ↦ INBETWEENFLOOR}∈cabin → INBETWEENFLOORSTATUS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LE8MAyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poSequent#CabinLeavesFloorGoingDown\/typeof_inBetweenFloorStatus\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTinBetweenFloorStatuw" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="f" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="c" org.eventb.core.type="CABINS"/>
+        <org.eventb.core.poIdentifier name="floor'" org.eventb.core.type="ℙ(CABINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="inBetweenFloorStatus'" org.eventb.core.type="ℙ(CABINS×INBETWEENFLOORSTATUS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPinBetweenFloorStatuw)" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTIDENTinBetweenFloorStatuw" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈cabin" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LE8MAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LFjQAyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c∈dom(floor)" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LE8MAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LFjQQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="f∈FLOORS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LE8MAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LFjQgyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPinBetweenFloorStatuw+" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuw)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="f=floor(c)" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LE8MAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LFjQwyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="f≠0" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LE8MAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LGKUAyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPinBetweenFloorStatuw" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuw+" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="inBetweenFloorStatus(c)=ATFLOOR" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LE8MAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LGKUQyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="CabinReachesFloorGoingDown/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatux("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈dom(inBetweenFloorStatus)∧inBetweenFloorStatus∈CABINS ⇸ INBETWEENFLOORSTATUS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LGxYQyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LHYcQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LGxYQyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LHYcQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatux("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CabinReachesFloorGoingDown/typeof_inBetweenFloorStatus/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTALLHYPinBetweenFloorStatux"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="inBetweenFloorStatus{c ↦ ATFLOOR}∈cabin → INBETWEENFLOORSTATUS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LGxYQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poSequent#CabinReachesFloorGoingDown\/typeof_inBetweenFloorStatus\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTinBetweenFloorStatux" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="c" org.eventb.core.type="CABINS"/>
+        <org.eventb.core.poIdentifier name="inBetweenFloorStatus'" org.eventb.core.type="ℙ(CABINS×INBETWEENFLOORSTATUS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPinBetweenFloorStatux(" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTIDENTinBetweenFloorStatux" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈cabin" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LGxYQyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LGxYwyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c∈dom(inBetweenFloorStatus)" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LGxYQyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LHYcAyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPinBetweenFloorStatux" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatux(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="inBetweenFloorStatus(c)=INBETWEENFLOOR" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LGxYQyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LHYcQyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="AddCabin/typeof_floor/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTALLHYPinBetweenFloorStatuy"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="floor∪{c ↦ 0}∈cabin∪{c} → FLOORS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LHYcwyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poSequent#AddCabin\/typeof_floor\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="AddCabin/typeof_inBetweenFloorStatus/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTALLHYPinBetweenFloorStatuy"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="inBetweenFloorStatus∪{c ↦ ATFLOOR}∈cabin∪{c} → INBETWEENFLOORSTATUS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LHYcwyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poSequent#AddCabin\/typeof_inBetweenFloorStatus\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTinBetweenFloorStatuy" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="c" org.eventb.core.type="CABINS"/>
+        <org.eventb.core.poIdentifier name="floor'" org.eventb.core.type="ℙ(CABINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="inBetweenFloorStatus'" org.eventb.core.type="ℙ(CABINS×INBETWEENFLOORSTATUS)"/>
+        <org.eventb.core.poIdentifier name="cabin'" org.eventb.core.type="ℙ(CABINS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPinBetweenFloorStatuy" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTIDENTinBetweenFloorStatuy" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈CABINS ∖ cabin" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LHYcwyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LH_gQyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="RemoveCabin/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuz("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈dom(floor)∧floor∈CABINS ⇸ ℤ" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LImkAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LJNoAyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LImkAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LJNoAyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuz("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="RemoveCabin/typeof_floor/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTALLHYPinBetweenFloorStatuz"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{c} ⩤ floor∈cabin ∖ {c} → FLOORS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LImkAyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poSequent#RemoveCabin\/typeof_floor\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="RemoveCabin/typeof_inBetweenFloorStatus/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTALLHYPinBetweenFloorStatuz"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{c} ⩤ inBetweenFloorStatus∈cabin ∖ {c} → INBETWEENFLOORSTATUS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LImkAyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poSequent#RemoveCabin\/typeof_inBetweenFloorStatus\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTinBetweenFloorStatuz" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="c" org.eventb.core.type="CABINS"/>
+        <org.eventb.core.poIdentifier name="floor'" org.eventb.core.type="ℙ(CABINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="inBetweenFloorStatus'" org.eventb.core.type="ℙ(CABINS×INBETWEENFLOORSTATUS)"/>
+        <org.eventb.core.poIdentifier name="cabin'" org.eventb.core.type="ℙ(CABINS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPinBetweenFloorStatuz(" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTIDENTinBetweenFloorStatuz" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈cabin" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LImkAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LImkgyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c∈dom(floor)" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LImkAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LImkwyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPinBetweenFloorStatuz" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#EVTHYPinBetweenFloorStatuz(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="floor(c)=TOP_FLOOR" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.event#_9LImkAyzEe-XH5da_c_4kQ|org.eventb.core.guard#_9LJNoAyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/ElevatorCoursework/m0_cabins.bpo|org.eventb.core.poFile#m0_cabins|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="cabin⊆CABINS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwAyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="floor∈cabin → FLOORS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwQyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="inBetweenFloorStatus∈cabin → INBETWEENFLOORSTATUS" org.eventb.core.source="/ElevatorCoursework/m0_cabins.bum|org.eventb.core.machineFile#m0_cabins|org.eventb.core.invariant#_9LAqwgyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

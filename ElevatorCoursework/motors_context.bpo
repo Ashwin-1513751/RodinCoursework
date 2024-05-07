@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="MOTOR_STATUS" org.eventb.core.type="ℙ(MOTOR_STATUS)"/>
+        <org.eventb.core.poIdentifier name="MOTOR_OFF" org.eventb.core.type="MOTOR_STATUS"/>
+        <org.eventb.core.poIdentifier name="MOTOR_ON" org.eventb.core.type="MOTOR_STATUS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/ElevatorCoursework/motors_context.bpo|org.eventb.core.poFile#motors_context|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="finite(MOTOR_STATUS)" org.eventb.core.source="/ElevatorCoursework/motors_context.buc|org.eventb.core.contextFile#motors_context|org.eventb.core.axiom#_9M6vQAyzEe-XH5da_c_4kQ"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(MOTOR_STATUS,{MOTOR_ON},{MOTOR_OFF})" org.eventb.core.source="/ElevatorCoursework/motors_context.buc|org.eventb.core.contextFile#motors_context|org.eventb.core.axiom#_9NIKoAyzEe-XH5da_c_4kQ"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

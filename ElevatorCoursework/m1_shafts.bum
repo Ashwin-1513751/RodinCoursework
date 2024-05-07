@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xmachine.base" org.eventb.core.generated="false" version="5">
+    <org.eventb.core.refinesMachine name="_9KuW4AyzEe-XH5da_c_4kQ" org.eventb.core.target="m0_cabins"/>
+    <org.eventb.core.seesContext name="_9KuW4QyzEe-XH5da_c_4kQ" org.eventb.core.target="cabin_context"/>
+    <org.eventb.core.seesContext name="_9KuW4gyzEe-XH5da_c_4kQ" org.eventb.core.target="shafts_context"/>
+    <org.eventb.core.variable name="_9Ku98AyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.identifier="cabin"/>
+    <org.eventb.core.variable name="_9Ku98QyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.identifier="floor"/>
+    <org.eventb.core.variable name="_9Ku98gyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.identifier="inBetweenFloorStatus"/>
+    <org.eventb.core.variable name="_9Ku98wyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.identifier="shaft"/>
+    <org.eventb.core.variable name="_9Ku99AyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.identifier="floorShaft"/>
+    <org.eventb.core.invariant name="_9KvlAAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="typeof_shaft" org.eventb.core.predicate="shaft ∈ cabin → SHAFTS"/>
+    <org.eventb.core.invariant name="_9KvlAQyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="typeof_floorShaft" org.eventb.core.predicate="floorShaft ∈ FLOORS ↔ SHAFTS"/>
+    <org.eventb.core.invariant name="_9KvlAgyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="cabin_floor_shaft" org.eventb.core.predicate="∀ c · c ∈ CABINS ∧ c ∈ dom(floor) ⇒ c ∈ dom(shaft)"/>
+    <org.eventb.core.event name="_9KwMEAyzEe-XH5da_c_4kQ" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_9KwMEQyzEe-XH5da_c_4kQ" org.eventb.core.assignment="shaft ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_shaft"/>
+        <org.eventb.core.action name="_9KwMEgyzEe-XH5da_c_4kQ" org.eventb.core.assignment="floorShaft ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_floorShaft"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_9KwzIAyzEe-XH5da_c_4kQ" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinLeavesFloorGoingUp">
+        <org.eventb.core.refinesEvent name="_9KwzIQyzEe-XH5da_c_4kQ" org.eventb.core.target="CabinLeavesFloorGoingUp"/>
+        <org.eventb.core.guard name="_9KwzIgyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="c ∈ dom (shaft)"/>
+        <org.eventb.core.guard name="_9KwzIwyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd8" org.eventb.core.predicate="shaft(c) = SHAFT_UP"/>
+        <org.eventb.core.guard name="_9KxaMAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd9" org.eventb.core.predicate="(floor(c) + 1 ↦ SHAFT_UP ) ∉ floorShaft"/>
+        <org.eventb.core.action name="_9KxaMQyzEe-XH5da_c_4kQ" org.eventb.core.assignment="floorShaft ≔ ( floorShaft ∖ {floor(c) ↦ SHAFT_UP} ) ∪ {floor(c) + 1 ↦ SHAFT_UP}" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_9KxaMgyzEe-XH5da_c_4kQ" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinReachesFloorGoingUp">
+        <org.eventb.core.refinesEvent name="_9KxaMwyzEe-XH5da_c_4kQ" org.eventb.core.target="CabinReachesFloorGoingUp"/>
+        <org.eventb.core.guard name="_9KxaNAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="c ∈ dom (shaft)"/>
+        <org.eventb.core.guard name="_9KyBQAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="shaft(c) = SHAFT_UP"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_9KyBQQyzEe-XH5da_c_4kQ" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinLeavesFloorGoingDown">
+        <org.eventb.core.refinesEvent name="_9KyBQgyzEe-XH5da_c_4kQ" org.eventb.core.target="CabinLeavesFloorGoingDown"/>
+        <org.eventb.core.guard name="_9KyBQwyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="c ∈ dom (shaft)"/>
+        <org.eventb.core.guard name="_9KyoUAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd8" org.eventb.core.predicate="shaft(c) = SHAFT_DOWN"/>
+        <org.eventb.core.guard name="_9KyoUQyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd9" org.eventb.core.predicate="(f − 1 ↦ SHAFT_DOWN ) ∉ floorShaft"/>
+        <org.eventb.core.action name="_9KzPYAyzEe-XH5da_c_4kQ" org.eventb.core.assignment="floorShaft ≔ ( floorShaft ∖ {f ↦ SHAFT_DOWN} ) ∪ ({f − 1 ↦ SHAFT_DOWN})" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_9KzPYQyzEe-XH5da_c_4kQ" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinReachesFloorGoingDown">
+        <org.eventb.core.refinesEvent name="_9KzPYgyzEe-XH5da_c_4kQ" org.eventb.core.target="CabinReachesFloorGoingDown"/>
+        <org.eventb.core.guard name="_9KzPYwyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="c ∈ dom (shaft)"/>
+        <org.eventb.core.guard name="_9Kz2cAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="shaft(c) = SHAFT_DOWN"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_9Kz2cQyzEe-XH5da_c_4kQ" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="AddCabin">
+        <org.eventb.core.refinesEvent name="_9Kz2cgyzEe-XH5da_c_4kQ" org.eventb.core.target="AddCabin"/>
+        <org.eventb.core.guard name="_9Kz2cwyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="(0 ↦ SHAFT_UP) ∉ floorShaft"/>
+        <org.eventb.core.guard name="_9K0dgAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="c ∉ dom(shaft)"/>
+        <org.eventb.core.action name="_9K0dgQyzEe-XH5da_c_4kQ" org.eventb.core.assignment="shaft ≔ shaft ∪ {c ↦ SHAFT_UP}" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="_9K0dggyzEe-XH5da_c_4kQ" org.eventb.core.assignment="floorShaft ≔ floorShaft ∪ {0 ↦ SHAFT_UP}" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_9K0dgwyzEe-XH5da_c_4kQ" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="RemoveCabin">
+        <org.eventb.core.refinesEvent name="_9K1EkAyzEe-XH5da_c_4kQ" org.eventb.core.target="RemoveCabin"/>
+        <org.eventb.core.guard name="_9K1EkQyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="c ∈ dom (shaft)"/>
+        <org.eventb.core.guard name="_9K1EkgyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="shaft(c) = SHAFT_UP"/>
+        <org.eventb.core.action name="_9K1EkwyzEe-XH5da_c_4kQ" org.eventb.core.assignment="shaft ≔ {c} ⩤ shaft" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="_9K1ElAyzEe-XH5da_c_4kQ" org.eventb.core.assignment="floorShaft ≔ floorShaft ∖ {TOP_FLOOR ↦ SHAFT_UP}" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_9K1roAyzEe-XH5da_c_4kQ" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="CabinUpToDown">
+        <org.eventb.core.parameter name="_9K1roQyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.identifier="c"/>
+        <org.eventb.core.guard name="_9K1rogyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ cabin"/>
+        <org.eventb.core.guard name="_9K1rowyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="c ∈ dom (shaft)"/>
+        <org.eventb.core.guard name="_9K2SsAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="c ∈ dom (floor)"/>
+        <org.eventb.core.guard name="_9K25wAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="shaft (c) = SHAFT_UP"/>
+        <org.eventb.core.guard name="_9K3g0AyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="floor(c) = TOP_FLOOR"/>
+        <org.eventb.core.guard name="_9K3g0QyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="(TOP_FLOOR ↦ SHAFT_DOWN) ∉ floorShaft"/>
+        <org.eventb.core.action name="_9K4H4AyzEe-XH5da_c_4kQ" org.eventb.core.assignment="shaft (c) ≔ SHAFT_DOWN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_9K4H4QyzEe-XH5da_c_4kQ" org.eventb.core.assignment="floorShaft ≔ ( floorShaft ∖ {floor(c) ↦ SHAFT_UP} ) ∪ ({floor(c) ↦ SHAFT_DOWN})" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_9K4u8AyzEe-XH5da_c_4kQ" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="CabinDownToUp">
+        <org.eventb.core.parameter name="_9K4u8QyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.identifier="c"/>
+        <org.eventb.core.guard name="_9K4u8gyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ cabin"/>
+        <org.eventb.core.guard name="_9K4u8wyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="c ∈ dom (shaft)"/>
+        <org.eventb.core.guard name="_9K4u9AyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="c ∈ dom (floor)"/>
+        <org.eventb.core.guard name="_9K59EAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="shaft(c) = SHAFT_DOWN"/>
+        <org.eventb.core.guard name="_9K59EQyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="floor (c) = 0"/>
+        <org.eventb.core.guard name="_9K59EgyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="(0 ↦ SHAFT_UP) ∉ floorShaft"/>
+        <org.eventb.core.action name="_9K6kIAyzEe-XH5da_c_4kQ" org.eventb.core.assignment="shaft (c) ≔ SHAFT_UP" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_9K6kIQyzEe-XH5da_c_4kQ" org.eventb.core.assignment="floorShaft ≔ ( floorShaft ∖ {floor(c) ↦ SHAFT_DOWN} ) ∪ ({floor(c) ↦ SHAFT_UP})" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

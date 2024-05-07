@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base" org.eventb.core.generated="false" version="3">
+    <org.eventb.core.carrierSet name="_9MresAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.identifier="MOTOR_STATUS"/>
+    <org.eventb.core.constant name="_9MxlUAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.identifier="MOTOR_ON"/>
+    <org.eventb.core.constant name="_9M3E4AyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.identifier="MOTOR_OFF"/>
+    <org.eventb.core.axiom name="_9M6vQAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="fixed_motors" org.eventb.core.predicate="finite(MOTOR_STATUS)"/>
+    <org.eventb.core.axiom name="_9NIKoAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="motor_status" org.eventb.core.predicate="partition(MOTOR_STATUS , {MOTOR_ON}, {MOTOR_OFF})"/>
+</org.eventb.core.contextFile>

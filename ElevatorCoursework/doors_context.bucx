@@ -1,0 +1,11 @@
+context doors_context
+sets
+	DOOR_STATUS
+constants
+	DOOR_OPEN
+	DOOR_HALFOPEN
+	DOOR_CLOSED
+axioms
+	@fixed_doors: finite(DOOR_STATUS)
+	@door_status: partition(DOOR_STATUS, {DOOR_OPEN}, {DOOR_HALFOPEN}, {DOOR_CLOSED})
+end

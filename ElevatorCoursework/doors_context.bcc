@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base">
+    <org.eventb.core.scAxiom name="'" org.eventb.core.label="fixed_doors" org.eventb.core.predicate="finite(DOOR_STATUS)" org.eventb.core.source="/ElevatorCoursework/doors_context.buc|org.eventb.core.contextFile#doors_context|org.eventb.core.axiom#_9N3xggyzEe-XH5da_c_4kQ" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scAxiom name="(" org.eventb.core.label="door_status" org.eventb.core.predicate="partition(DOOR_STATUS,{DOOR_OPEN},{DOOR_HALFOPEN},{DOOR_CLOSED})" org.eventb.core.source="/ElevatorCoursework/doors_context.buc|org.eventb.core.contextFile#doors_context|org.eventb.core.axiom#_9N6NwAyzEe-XH5da_c_4kQ" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scConstant name="DOOR_CLOSED" org.eventb.core.source="/ElevatorCoursework/doors_context.buc|org.eventb.core.contextFile#doors_context|org.eventb.core.constant#_9N3xgQyzEe-XH5da_c_4kQ" org.eventb.core.type="DOOR_STATUS"/>
+    <org.eventb.core.scConstant name="DOOR_HALFOPEN" org.eventb.core.source="/ElevatorCoursework/doors_context.buc|org.eventb.core.contextFile#doors_context|org.eventb.core.constant#_9N3xgAyzEe-XH5da_c_4kQ" org.eventb.core.type="DOOR_STATUS"/>
+    <org.eventb.core.scConstant name="DOOR_OPEN" org.eventb.core.source="/ElevatorCoursework/doors_context.buc|org.eventb.core.contextFile#doors_context|org.eventb.core.constant#_9N3KcAyzEe-XH5da_c_4kQ" org.eventb.core.type="DOOR_STATUS"/>
+    <org.eventb.core.scCarrierSet name="DOOR_STATUS" org.eventb.core.source="/ElevatorCoursework/doors_context.buc|org.eventb.core.contextFile#doors_context|org.eventb.core.carrierSet#_9NzgEAyzEe-XH5da_c_4kQ" org.eventb.core.type="ℙ(DOOR_STATUS)"/>
+</org.eventb.core.scContextFile>
