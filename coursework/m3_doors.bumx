@@ -100,7 +100,7 @@ events
 	where
 		@grd1: c ∈ cabin
 		@grd2: door(c) = DOOR_CLOSED
-		@grd3: motor (c) = MOTOR_OFF // only open door if cabin is motor is off
+		@grd3: inBetweenFloorStatus (c) = ATFLOOR // only open door if cabin is at a floor and not moving between floors
 		@grd4: d ∈ DOOR_STATUS
 		@grd5: c ↦ d ∈ door
 	then
@@ -115,6 +115,7 @@ events
 		@grd2: door(c) = DOOR_HALFOPEN
 		@grd3: d ∈ DOOR_STATUS
 		@grd4: c ↦ d ∈ door
+		@grd: motor (c) = MOTOR_ON
 	then
 		@act1: door(c) ≔ DOOR_OPEN
 	end
@@ -127,6 +128,7 @@ events
 		@grd2: door(c) = DOOR_OPEN
 		@grd3: d ∈ DOOR_STATUS
 		@grd4: c ↦ d ∈ door
+		@grd: motor (c) = MOTOR_ON
 	then
 		@act1: door(c) ≔ DOOR_HALFOPEN
 	end
@@ -139,6 +141,7 @@ events
 		@grd2: door(c) = DOOR_HALFOPEN
 		@grd3: d ∈ DOOR_STATUS
 		@grd4: c ↦ d ∈ door
+		@grd: motor (c) = MOTOR_ON
 	then
 		@act1: door(c) ≔ DOOR_CLOSED
 	end
