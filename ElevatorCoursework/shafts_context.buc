@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base" org.eventb.core.generated="false" version="3">
-    <org.eventb.core.carrierSet name="_9NUX4AyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.identifier="SHAFTS"/>
-    <org.eventb.core.constant name="_9NWNEAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.identifier="SHAFT_UP"/>
-    <org.eventb.core.constant name="_9NaegAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.identifier="SHAFT_DOWN"/>
-    <org.eventb.core.axiom name="_9Nc6wAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="fixed_shafts" org.eventb.core.predicate="finite(SHAFTS)"/>
-    <org.eventb.core.axiom name="_9NhMMAyzEe-XH5da_c_4kQ" org.eventb.core.generated="false" org.eventb.core.label="shaft_status" org.eventb.core.predicate="partition(SHAFTS ,{SHAFT_UP}, {SHAFT_DOWN})"/>
-</org.eventb.core.contextFile>
