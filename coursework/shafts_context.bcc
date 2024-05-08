@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base">
-    <org.eventb.core.scAxiom name="'" org.eventb.core.label="fixed_shafts" org.eventb.core.predicate="finite(SHAFTS)" org.eventb.core.source="/ElevatorCoursework/shafts_context.buc|org.eventb.core.contextFile#shafts_context|org.eventb.core.axiom#_kgxsYg0FEe-sV-utJgg0NA" org.eventb.core.theorem="false"/>
-    <org.eventb.core.scAxiom name="(" org.eventb.core.label="shaft_status" org.eventb.core.predicate="partition(SHAFTS,{SHAFT_UP},{SHAFT_DOWN})" org.eventb.core.source="/ElevatorCoursework/shafts_context.buc|org.eventb.core.contextFile#shafts_context|org.eventb.core.axiom#_kgxsYw0FEe-sV-utJgg0NA" org.eventb.core.theorem="false"/>
-    <org.eventb.core.scConstant name="SHAFT_UP" org.eventb.core.source="/ElevatorCoursework/shafts_context.buc|org.eventb.core.contextFile#shafts_context|org.eventb.core.constant#_kgxsYA0FEe-sV-utJgg0NA" org.eventb.core.type="SHAFTS"/>
-    <org.eventb.core.scCarrierSet name="SHAFTS" org.eventb.core.source="/ElevatorCoursework/shafts_context.buc|org.eventb.core.contextFile#shafts_context|org.eventb.core.carrierSet#_kgxFUA0FEe-sV-utJgg0NA" org.eventb.core.type="ℙ(SHAFTS)"/>
-    <org.eventb.core.scConstant name="SHAFT_DOWN" org.eventb.core.source="/ElevatorCoursework/shafts_context.buc|org.eventb.core.contextFile#shafts_context|org.eventb.core.constant#_kgxsYQ0FEe-sV-utJgg0NA" org.eventb.core.type="SHAFTS"/>
-</org.eventb.core.scContextFile>
