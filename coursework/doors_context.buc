@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base" org.eventb.core.generated="false" version="3">
+    <org.eventb.core.carrierSet name="_kg7dYA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="DOOR_STATUS"/>
+    <org.eventb.core.constant name="_kg7dYQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="DOOR_OPEN"/>
+    <org.eventb.core.constant name="_kg7dYg0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="DOOR_HALFOPEN"/>
+    <org.eventb.core.constant name="_kg8EcA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="DOOR_CLOSED"/>
+    <org.eventb.core.axiom name="_kg8EcQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="fixed_doors" org.eventb.core.predicate="finite(DOOR_STATUS)"/>
+    <org.eventb.core.axiom name="_kg8Ecg0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="door_status" org.eventb.core.predicate="partition(DOOR_STATUS, {DOOR_OPEN}, {DOOR_HALFOPEN}, {DOOR_CLOSED})"/>
+</org.eventb.core.contextFile>

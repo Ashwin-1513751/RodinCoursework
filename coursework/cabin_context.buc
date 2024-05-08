@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base" org.eventb.core.generated="false" version="3">
+    <org.eventb.core.carrierSet name="_kg0vsA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="CABINS"/>
+    <org.eventb.core.carrierSet name="_kg0vsQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="CABINSTATUS"/>
+    <org.eventb.core.carrierSet name="_kg0vsg0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="INBETWEENFLOORSTATUS"/>
+    <org.eventb.core.carrierSet name="_kg0vsw0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="DIRECTION"/>
+    <org.eventb.core.constant name="_kg1WwA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="FLOORS"/>
+    <org.eventb.core.constant name="_kg1WwQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="TOP_FLOOR"/>
+    <org.eventb.core.constant name="_kg1Wwg0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="CURRENT_FLOOR_CABIN"/>
+    <org.eventb.core.constant name="_kg1Www0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="UP"/>
+    <org.eventb.core.constant name="_kg190A0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="DOWN"/>
+    <org.eventb.core.constant name="_kg190Q0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="INBETWEENFLOOR"/>
+    <org.eventb.core.constant name="_kg190g0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="ATFLOOR"/>
+    <org.eventb.core.constant name="_kg190w0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="MOVING"/>
+    <org.eventb.core.constant name="_kg191A0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="STOPPED"/>
+    <org.eventb.core.axiom name="_kg2k4A0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="top_floor_value" org.eventb.core.predicate="TOP_FLOOR ∈ ℕ1"/>
+    <org.eventb.core.axiom name="_kg2k4Q0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="floors" org.eventb.core.predicate="FLOORS = 0‥TOP_FLOOR"/>
+    <org.eventb.core.axiom name="_kg2k4g0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="fixed_cabins" org.eventb.core.predicate="finite(CABINS)"/>
+    <org.eventb.core.axiom name="_kg3L8A0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="num_of_floors" org.eventb.core.predicate="card(FLOORS) = TOP_FLOOR + 1"/>
+    <org.eventb.core.axiom name="_kg3L8Q0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="fixed_floors" org.eventb.core.predicate="finite(FLOORS)"/>
+    <org.eventb.core.axiom name="_kg3L8g0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="max_cabins" org.eventb.core.predicate="card(CABINS) &lt; (card(FLOORS)∗2)"/>
+    <org.eventb.core.axiom name="_kg3zAA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="cabin_to_floor" org.eventb.core.predicate="CURRENT_FLOOR_CABIN ∈ CABINS → FLOORS"/>
+    <org.eventb.core.axiom name="_kg3zAQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="collision_avoidance" org.eventb.core.predicate="∀a·a ∈ dom(CURRENT_FLOOR_CABIN) ⇒ CURRENT_FLOOR_CABIN(a) ∉ ran({a} ⩤ CURRENT_FLOOR_CABIN)"/>
+    <org.eventb.core.axiom name="_kg3zAg0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="in_between_floor_status" org.eventb.core.predicate="partition(INBETWEENFLOORSTATUS, {INBETWEENFLOOR},{ATFLOOR})"/>
+    <org.eventb.core.axiom name="_kg4aEA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="direction" org.eventb.core.predicate="partition(DIRECTION , {UP},{DOWN})"/>
+    <org.eventb.core.axiom name="_kg4aEQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="fixed_cabin_status" org.eventb.core.predicate="finite(CABINSTATUS)"/>
+    <org.eventb.core.axiom name="_kg5BIA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="cabin_status" org.eventb.core.predicate="partition(CABINSTATUS, {MOVING} , {STOPPED})"/>
+</org.eventb.core.contextFile>
