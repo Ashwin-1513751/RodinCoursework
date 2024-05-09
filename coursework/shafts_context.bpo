@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="SHAFTS" org.eventb.core.type="ℙ(SHAFTS)"/>
+        <org.eventb.core.poIdentifier name="SHAFT_UP" org.eventb.core.type="SHAFTS"/>
+        <org.eventb.core.poIdentifier name="SHAFT_DOWN" org.eventb.core.type="SHAFTS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/ElevatorCoursework/shafts_context.bpo|org.eventb.core.poFile#shafts_context|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="finite(SHAFTS)" org.eventb.core.source="/ElevatorCoursework/shafts_context.buc|org.eventb.core.contextFile#shafts_context|org.eventb.core.axiom#_A5bsgw3hEe-DGtn0v7Nx8Q"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(SHAFTS,{SHAFT_UP},{SHAFT_DOWN})" org.eventb.core.source="/ElevatorCoursework/shafts_context.buc|org.eventb.core.contextFile#shafts_context|org.eventb.core.axiom#_A5bshA3hEe-DGtn0v7Nx8Q"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

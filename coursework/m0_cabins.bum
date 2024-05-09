@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xmachine.base" org.eventb.core.generated="false" version="5">
+    <org.eventb.core.seesContext name="_A26kAA3hEe-DGtn0v7Nx8Q" org.eventb.core.target="cabin_context"/>
+    <org.eventb.core.variable name="_A27LEA3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.identifier="cabin"/>
+    <org.eventb.core.variable name="_A27LEQ3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.identifier="floor"/>
+    <org.eventb.core.variable name="_A27LEg3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.identifier="inBetweenFloorStatus"/>
+    <org.eventb.core.invariant name="_A27LEw3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="typeof_cabin" org.eventb.core.predicate="cabin ⊆ CABINS"/>
+    <org.eventb.core.invariant name="_A27LFA3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="typeof_floor" org.eventb.core.predicate="floor ∈ cabin → FLOORS"/>
+    <org.eventb.core.invariant name="_A27yIA3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="typeof_inBetweenFloorStatus" org.eventb.core.predicate="inBetweenFloorStatus ∈ cabin → INBETWEENFLOORSTATUS"/>
+    <org.eventb.core.event name="_A27yIQ3hEe-DGtn0v7Nx8Q" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_A28ZMA3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="floor ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_floor"/>
+        <org.eventb.core.action name="_A29nUA3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="cabin ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_cabin"/>
+        <org.eventb.core.action name="_A29nUQ3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="inBetweenFloorStatus ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_inBetweenFloorStatus"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_A29nUg3hEe-DGtn0v7Nx8Q" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="CabinLeavesFloorGoingUp">
+        <org.eventb.core.parameter name="_A29nUw3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.identifier="c"/>
+        <org.eventb.core.parameter name="_A29nVA3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.identifier="f"/>
+        <org.eventb.core.guard name="_A29nVQ3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ cabin"/>
+        <org.eventb.core.guard name="_A2-OYA3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="c ∈ dom (floor)"/>
+        <org.eventb.core.guard name="_A2-OYQ3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="f ∈ FLOORS"/>
+        <org.eventb.core.guard name="_A2-OYg3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="f = floor(c)"/>
+        <org.eventb.core.guard name="_A2-OYw3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="f ≠ TOP_FLOOR"/>
+        <org.eventb.core.guard name="_A2-1cA3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="inBetweenFloorStatus (c) = ATFLOOR"/>
+        <org.eventb.core.action name="_A2-1cQ3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="floor (c) ≔ f + 1" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_A2-1cg3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="inBetweenFloorStatus (c) ≔ INBETWEENFLOOR" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_A2_cgA3hEe-DGtn0v7Nx8Q" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="CabinReachesFloorGoingUp">
+        <org.eventb.core.parameter name="_A2_cgQ3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.identifier="c"/>
+        <org.eventb.core.guard name="_A2_cgg3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ cabin"/>
+        <org.eventb.core.guard name="_A2_cgw3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="c ∈ dom (inBetweenFloorStatus)"/>
+        <org.eventb.core.guard name="_A3ADkA3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="inBetweenFloorStatus (c) = INBETWEENFLOOR"/>
+        <org.eventb.core.action name="_A3ADkQ3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="inBetweenFloorStatus (c) ≔ ATFLOOR" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_A3ADkg3hEe-DGtn0v7Nx8Q" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="CabinLeavesFloorGoingDown">
+        <org.eventb.core.parameter name="_A3ADkw3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.identifier="c"/>
+        <org.eventb.core.parameter name="_A3AqoA3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.identifier="f"/>
+        <org.eventb.core.guard name="_A3AqoQ3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ cabin"/>
+        <org.eventb.core.guard name="_A3Aqog3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="c ∈ dom (floor)"/>
+        <org.eventb.core.guard name="_A3BRsA3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="f ∈ FLOORS"/>
+        <org.eventb.core.guard name="_A3BRsQ3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="f = floor(c)"/>
+        <org.eventb.core.guard name="_A3BRsg3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="f ≠ 0"/>
+        <org.eventb.core.guard name="_A3BRsw3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="inBetweenFloorStatus (c) = ATFLOOR"/>
+        <org.eventb.core.action name="_A3B4wA3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="floor (c) ≔ f − 1" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_A3B4wQ3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="inBetweenFloorStatus (c) ≔ INBETWEENFLOOR" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_A3B4wg3hEe-DGtn0v7Nx8Q" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="CabinReachesFloorGoingDown">
+        <org.eventb.core.parameter name="_A3B4ww3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.identifier="c"/>
+        <org.eventb.core.guard name="_A3B4xA3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ cabin"/>
+        <org.eventb.core.guard name="_A3B4xQ3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="c ∈ dom (inBetweenFloorStatus)"/>
+        <org.eventb.core.guard name="_A3Cf0A3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="inBetweenFloorStatus (c) = INBETWEENFLOOR"/>
+        <org.eventb.core.action name="_A3Cf0Q3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="inBetweenFloorStatus (c) ≔ ATFLOOR" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_A3Cf0g3hEe-DGtn0v7Nx8Q" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="AddCabin">
+        <org.eventb.core.parameter name="_A3DG4A3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.identifier="c"/>
+        <org.eventb.core.guard name="_A3DG4Q3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ CABINS∖cabin"/>
+        <org.eventb.core.action name="_A3Dt8A3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="cabin ≔ cabin ∪ {c}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_A3Dt8Q3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="floor ≔ floor ∪ {c ↦ 0}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="_A3Dt8g3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="inBetweenFloorStatus ≔ inBetweenFloorStatus ∪ {c ↦ ATFLOOR}" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_A3EVAA3hEe-DGtn0v7Nx8Q" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="RemoveCabin">
+        <org.eventb.core.parameter name="_A3EVAQ3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.identifier="c"/>
+        <org.eventb.core.guard name="_A3EVAg3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ cabin"/>
+        <org.eventb.core.guard name="_A3E8EA3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="c ∈ dom (floor)"/>
+        <org.eventb.core.guard name="_A3E8EQ3hEe-DGtn0v7Nx8Q" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="floor (c) = TOP_FLOOR"/>
+        <org.eventb.core.action name="_A3FjIA3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="floor ≔ {c} ⩤ floor" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_A3FjIQ3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="inBetweenFloorStatus ≔ {c} ⩤ inBetweenFloorStatus" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="_A3GKMA3hEe-DGtn0v7Nx8Q" org.eventb.core.assignment="cabin ≔ cabin ∖ {c}" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

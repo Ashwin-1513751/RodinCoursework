@@ -1,0 +1,150 @@
+machine m3_doors
+refines m2_motors
+sees
+	cabin_context 
+	shafts_context
+	motors_context
+	doors_context
+variables
+	cabin
+	floor
+    inBetweenFloorStatus
+    shaft
+    floorShaft
+    motor
+    door
+invariants
+	@typeof_door: door ∈ cabin → DOOR_STATUS // REQ 13 Each cabin has a door which can be OPEN, HALF open, or CLOSED.
+	
+	
+events
+	event INITIALISATION extends INITIALISATION
+	then
+		@init_door: door ≔ ∅
+	end
+	
+	event CabinLeavesFloorGoingUp extends CabinLeavesFloorGoingUp
+	any d 
+	where
+		@grd12: c ∈ dom(door) 
+		@grd13: d ∈ DOOR_STATUS
+		@grd14: c ↦ d ∈ door
+		@grd: door(c) = DOOR_CLOSED //SAF 14 door must be closed when cabin is moving
+	end
+	
+	event CabinReachesFloorGoingUp extends CabinReachesFloorGoingUp
+	end	
+	
+	event  CabinLeavesFloorGoingDown extends  CabinLeavesFloorGoingDown
+	any d 
+	where
+		@grd12: c ∈ dom(door)
+		@grd13: d ∈ DOOR_STATUS
+		@grd14: c ↦ d ∈ door
+		@grd: door(c) = DOOR_CLOSED //SAF 14 door must be closed when cabin is moving
+	end
+	
+	event CabinReachesFloorGoingDown  extends CabinReachesFloorGoingDown 
+	end
+	
+	event AddCabin extends AddCabin
+	where
+		@grd6:c ∉ dom(door)
+	then
+		@act8: door ≔ door ∪ {c ↦ DOOR_CLOSED} // add cabin with closed door
+		
+	end
+	
+	event RemoveCabin extends RemoveCabin
+	where
+		@grd: door(c) = DOOR_CLOSED
+	then
+		@act8: door ≔ {c} ⩤ door
+	end
+	
+	event CabinUpToDown extends CabinUpToDown
+	any d 
+	where 
+		@grd10: d ∈ DOOR_STATUS
+		@grd11: c ↦ d ∈ door
+		@grd: door(c) = DOOR_CLOSED
+		
+	end
+		
+	event CabinDownToUp extends CabinDownToUp
+	any d 
+	where 
+		@grd10: d ∈ DOOR_STATUS
+		@grd11: c ↦ d ∈ door
+		@grd: door(c) = DOOR_CLOSED
+	end
+	
+	event MotorStarts extends MotorStarts
+	any d 
+	where
+		@grd5: door(c) = DOOR_CLOSED  //door is closed before motor starts
+		@grd6: d ∈ DOOR_STATUS
+		@grd7: c ↦ d ∈ door
+	end
+	
+	event MotorStops extends MotorStops
+	any d 
+	where 
+		@grd5: d ∈ DOOR_STATUS
+		@grd6:c ↦ d ∈ door
+	end
+	
+	event DoorClosedToHalf
+	any
+		c d 
+	where
+		@grd1: c ∈ cabin
+		@grd2: door(c) = DOOR_CLOSED
+		@grd3: inBetweenFloorStatus (c) = ATFLOOR // only open door if cabin is at a floor and not moving between floors
+		@grd4: d ∈ DOOR_STATUS
+		@grd5: c ↦ d ∈ door
+	then
+		@act1: door(c) ≔ DOOR_HALFOPEN
+	end
+	
+	event DoorHalfToOpen
+	any
+		c d
+	where
+		@grd1: c ∈ cabin
+		@grd2: door(c) = DOOR_HALFOPEN
+		@grd3: d ∈ DOOR_STATUS
+		@grd4: c ↦ d ∈ door
+		@grd: motor (c) = MOTOR_ON
+	then
+		@act1: door(c) ≔ DOOR_OPEN
+	end
+	
+	event DoorOpenToHalf
+	any
+		c d
+	where
+		@grd1: c ∈ cabin
+		@grd2: door(c) = DOOR_OPEN
+		@grd3: d ∈ DOOR_STATUS
+		@grd4: c ↦ d ∈ door
+		@grd: motor (c) = MOTOR_ON
+	then
+		@act1: door(c) ≔ DOOR_HALFOPEN
+	end
+	
+	event DoorHalfToClosed
+	any
+		c d
+	where
+		@grd1: c ∈ cabin
+		@grd2: door(c) = DOOR_HALFOPEN
+		@grd3: d ∈ DOOR_STATUS
+		@grd4: c ↦ d ∈ door
+		@grd: motor (c) = MOTOR_ON
+	then
+		@act1: door(c) ≔ DOOR_CLOSED
+	end
+end
+
+

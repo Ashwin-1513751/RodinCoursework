@@ -1,0 +1,11 @@
+context motors_context
+
+sets
+	MOTOR_STATUS
+constants
+	MOTOR_ON
+	MOTOR_OFF
+axioms
+	@fixed_motors: finite(MOTOR_STATUS)
+	@motor_status: partition(MOTOR_STATUS , {MOTOR_ON}, {MOTOR_OFF})
+end

@@ -1,0 +1,113 @@
+machine m1_shafts
+refines m0_cabins
+sees 
+	cabin_context 
+	shafts_context
+variables
+	cabin
+	floor
+    inBetweenFloorStatus
+    shaft
+    floorShaft 
+invariants
+	@typeof_shaft:  shaft ∈ cabin → SHAFTS    
+	@typeof_floorShaft: floorShaft ∈ FLOORS ↔ SHAFTS  // occupied floors in a shaft end
+	@cabin_floor_shaft: ∀ c · c ∈ cabin ∧ c ∈ dom(floor) ⇒ c ∈ dom(shaft) 
+events 
+	event INITIALISATION extends INITIALISATION
+	then
+		@init_shaft: shaft ≔ ∅ 
+		@init_floorShaft: floorShaft ≔ ∅
+	end
+	
+	
+	event CabinLeavesFloorGoingUp extends CabinLeavesFloorGoingUp
+	where
+		@grd7: c ∈ dom (shaft) // cabin is in a shaft
+		@grd8: shaft(c) = SHAFT_UP  // REQ 2 There are two shafts: one for cabins going up and the other one for cabins going down.
+		@grd9: (floor(c) + 1 ↦ SHAFT_UP ) ∉ floorShaft  // there is not a cabin on the floor above  - SAF 11 no collision
+	 then
+		// remove current floor from floor shaft and add the new floor the cabin is moving to
+		@act4: floorShaft ≔ ( floorShaft ∖ {floor(c) ↦ SHAFT_UP} ) ∪ {floor(c) + 1 ↦ SHAFT_UP} 
+	end
+	
+	event CabinReachesFloorGoingUp extends CabinReachesFloorGoingUp
+	where
+		@grd6: c ∈ dom (shaft)
+		@grd7: shaft(c) = SHAFT_UP
+	end	
+	
+	event  CabinLeavesFloorGoingDown extends  CabinLeavesFloorGoingDown
+	where
+		@grd7: c ∈ dom (shaft)
+		@grd8: shaft(c) = SHAFT_DOWN // REQ 2 There are two shafts: one for cabins going up and the other one for cabins going down.
+		@grd9: (f − 1 ↦ SHAFT_DOWN ) ∉ floorShaft  // there is not a cabin on the floor below - SAF 11 no collision
+	then
+		//remove floor cabin is currently on from floorshaft and add the floor cabin is moving to
+		@act4: floorShaft ≔ ( floorShaft ∖ {f ↦ SHAFT_DOWN} ) ∪ ({f − 1 ↦ SHAFT_DOWN})
+	end
+	
+	event CabinReachesFloorGoingDown  extends CabinReachesFloorGoingDown 
+	where
+		@grd6: c ∈ dom (shaft)
+		@grd7: shaft(c) = SHAFT_DOWN
+	end
+	
+	event  AddCabin extends  AddCabin
+	where
+		// there is not a cabin on floor 0 in shaft one - SAF 11 no collision
+		@grd2: (0 ↦ SHAFT_UP) ∉ floorShaft
+		@grd3: c ∉ dom(shaft)
+	then
+		//REQ 3 A cabin can be added to the system (from the service shaft) at the bottom of the up-going shaft.
+		@act5: shaft ≔ shaft ∪ {c ↦ SHAFT_UP}  //cabin is added from floor 0 in shaft 1
+		@act6: floorShaft ≔ floorShaft ∪ {0 ↦ SHAFT_UP} 
+		
+	end
+	
+	event RemoveCabin extends RemoveCabin
+	where
+		@grd6: c ∈ dom (shaft)
+		@grd7: shaft(c) = SHAFT_UP
+	then 
+		//REQ 4 A cabin can be removed from the system (to the service shaft) at the top of the up-going shaft.
+		@act5: shaft ≔ {c} ⩤ shaft
+		@act6: floorShaft ≔ floorShaft ∖ {TOP_FLOOR ↦ SHAFT_UP}
+	end
+	
+	event CabinUpToDown 
+	any 
+		c
+	where
+		@grd1: c ∈ cabin
+		@grd2: c ∈ dom (shaft)
+		@grd3: c ∈ dom (floor)
+		@grd4: shaft (c) = SHAFT_UP 
+		@grd5: floor(c) = TOP_FLOOR  // REQ 6 A cabin can only transfer from up-going shaft to down-going shaft at the top floor.
+		//top floor in shaft 2 is empty - SAF 11 no collision
+		@grd6: (TOP_FLOOR ↦ SHAFT_DOWN) ∉ floorShaft
+	then 
+		@act1: shaft (c) ≔ SHAFT_DOWN
+		//same floor different shaft	
+		@act2: floorShaft ≔ ( floorShaft ∖ {floor(c) ↦ SHAFT_UP} ) ∪ ({floor(c) ↦ SHAFT_DOWN})
+	end
+		
+	event CabinDownToUp
+	any 
+		c
+	where
+		@grd1: c ∈ cabin
+		@grd2: c ∈ dom (shaft)
+		@grd3: c ∈ dom (floor)
+		@grd4: shaft(c) = SHAFT_DOWN
+		@grd5: floor (c) = 0 // REQ 7 A cabin can only transfer from down-going shaft to up-going shaft at the bottom floor.
+		//bottom floor in shaft 1 is empty - SAF 11 no collision
+		@grd6: (0 ↦ SHAFT_UP) ∉ floorShaft
+	then 
+		@act1: shaft (c) ≔ SHAFT_UP
+		//same floor different shaft
+		@act3: floorShaft ≔ ( floorShaft ∖ {floor(c) ↦ SHAFT_DOWN} ) ∪ ({floor(c) ↦ SHAFT_UP})
+	
+	end
+	
+end

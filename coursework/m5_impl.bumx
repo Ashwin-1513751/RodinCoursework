@@ -1,0 +1,423 @@
+machine m5_impl
+refines m4_buttons
+sees 
+	cabin_context 
+	shafts_context
+	motors_context
+	doors_context
+	buttons_context
+variables
+	cabin
+	floor
+    inBetweenFloorStatus
+    shaft
+    floorShaft
+    motor
+    door
+    upButtons
+    downButtons
+    floorButtons
+    upButtonArray
+    downButtonArray
+    floorButtonArray
+invariants
+	@typeof_upButtonArray: upButtonArray ∈ 0 ‥ TOP_FLOOR − 1 → BOOL
+	@typeof_downButtonArray: downButtonArray ∈  1 ‥ TOP_FLOOR → BOOL
+	@typeof_floorButtonArray:dom(floorButtonArray) ≠ ∅ ⇒ floorButtonArray ∈ (CABINS ↔ 0 ‥ TOP_FLOOR ) → BOOL  //floor button inside a cabin
+	@gluing_upButtons: upButtons = dom(upButtonArray ▷ {TRUE}) // the buttons that are true (requested)
+	@gluing_downButtons: downButtons = dom(downButtonArray ▷ {TRUE}) 
+	@gluing_floorButtons:dom(floorButtons) ≠ ∅ ⇒ floorButtons ∈ dom(floorButtonArray ▷ {TRUE})	
+		
+events
+
+	event INITIALISATION 
+	then
+	  	@init_floor: floor ≔ ∅ 
+   	 	@init_cabin: cabin ≔ ∅ 
+    	@init_inBetweenFloorStatus: inBetweenFloorStatus ≔ ∅ 
+   	 	@init_shaft: shaft ≔ ∅ 
+    	@init_floorShaft: floorShaft ≔ ∅ 
+    	@init_motor: motor ≔ ∅ 
+    	@init_door: door ≔ ∅ 
+    	@init_up_buttons: upButtons ≔ ∅
+    	@init_down_buttons: downButtons ≔ ∅
+    	@init_floor_buttons:floorButtons ≔  ∅		
+    	@init_upButtonArray: upButtonArray ≔ 0 ‥ TOP_FLOOR − 1 × {FALSE} 
+		@init_downButtonArray: downButtonArray ≔ 1 ‥ TOP_FLOOR × {FALSE} 
+		@init_floorButtonArray: floorButtonArray ≔ ∅  // (∅ ↔ 0 ‥ TOP_FLOOR) × {FALSE}
+	end
+	
+	
+	event CabinLeavesFloorGoingUp extends CabinLeavesFloorGoingUp
+	end
+	
+	event CabinReachesFloorGoingUp extends CabinReachesFloorGoingUp
+	end	
+	
+	event CabinLeavesFloorGoingDown extends  CabinLeavesFloorGoingDown
+	end
+	
+	event CabinReachesFloorGoingDown  extends CabinReachesFloorGoingDown 
+	end
+	
+	event AddCabin extends AddCabin
+	then  // add button for each floor to cabin - set to false
+	@act9: floorButtonArray ≔ floorButtonArray ∪ (({c} ↔ 0‥ TOP_FLOOR) × {FALSE})
+    end
+	
+	event RemoveCabin extends RemoveCabin
+	then
+	@act10: floorButtonArray ≔ {{c} ↔ 0‥ TOP_FLOOR)} ⩤ floorButtonArray 
+	end
+	
+	event CabinUpToDown refines CabinUpToDown
+	any
+   		c 
+    	m 
+    	d 
+	where
+    	@grd1: c ∈ cabin 
+    	@grd2: c ∈ dom (shaft) 
+    	@grd3: c ∈ dom (floor) 
+    	@grd4: shaft (c) = SHAFT_UP 
+    	@grd5: floor(c) = TOP_FLOOR 
+    	@grd6: (TOP_FLOOR ↦ SHAFT_DOWN) ∉ floorShaft 
+    	@grd8: motor(c) = MOTOR_ON 
+    	@grd9: c ↦ m ∈ motor 
+    	@grd10: d ∈ DOOR_STATUS 
+    	@grd11: c ↦ d ∈ door
+    	@grd12: door(c) = DOOR_CLOSED
+    	@grd13: (c ↦ floor (c))  ∉ floorButtons    //floorButtonArray (c ↦ floor (c) ) = FALSE   //the current floor is not requested from inside the cabin
+    	//there is a request to go up from the floor
+    	@grd14: floor(c) ∈ dom(downButtonArray)
+    	@grd15: downButtonArray(floor(c)) = TRUE
+	then
+   		@act1: shaft (c) ≔ SHAFT_DOWN 
+   	 	@act2: floorShaft ≔ ( floorShaft ∖ {floor(c) ↦ SHAFT_UP} ) ∪ ({floor(c) ↦ SHAFT_DOWN}) 
+	end
+	
+	event CabinUpToDownInCabin refines CabinUpToDownInCabin
+	any
+    c 
+    m 
+    d 
+    b // floor below current
+	where
+    @grd1: c ∈ cabin 
+    @grd2: c ∈ dom (shaft) 
+    @grd3: c ∈ dom (floor) 
+    @grd4: shaft (c) = SHAFT_UP 
+    @grd5: floor(c) = TOP_FLOOR 
+    @grd6: (TOP_FLOOR ↦ SHAFT_DOWN) ∉ floorShaft 
+    @grd8: motor(c) = MOTOR_ON 
+    @grd9: c ↦ m ∈ motor 
+    @grd10: d ∈ DOOR_STATUS 
+    @grd11: c ↦ d ∈ door 
+    @grd12: door(c) = DOOR_CLOSED 
+    @grd13: (c ↦ floor (c))  ∉ floorButtons //current floor is not requested 
+    @grd14: b ∈ 0‥floor(c)−1
+    @grd15: (c ↦ b ) ∈ floorButtons  ∨ TRUE ∈ downButtonArray [1‥floor(c)−1] ∨ TRUE ∈ upButtonArray [0‥floor(c)−1] // a lower floor is requested 
+	then
+    @act1: shaft (c) ≔ SHAFT_DOWN 
+    @act2: floorShaft ≔ ( floorShaft ∖ {floor(c) ↦ SHAFT_UP} ) ∪ ({floor(c) ↦ SHAFT_DOWN}) 
+	end
+		
+	event CabinDownToUp refines CabinDownToUp
+	any
+    c 
+    m 
+    d 
+	where
+    @grd1: c ∈ cabin 
+    @grd2: c ∈ dom (shaft) 
+    @grd3: c ∈ dom (floor) 
+    @grd4: shaft(c) = SHAFT_DOWN 
+    @grd5: floor (c) = 0 
+    @grd6: (0 ↦ SHAFT_UP) ∉ floorShaft 
+    @grd8: motor(c) = MOTOR_ON 
+    @grd9: c ↦ m ∈ motor 
+    @grd10: d ∈ DOOR_STATUS 
+    @grd11: c ↦ d ∈ door 
+    @grd12: door(c) = DOOR_CLOSED 
+    @grd13: (c ↦ floor (c))  ∉ floorButtons //the current floor is not requested from inside the cabin
+    //there is a request to go up from the floor
+    @grd14: floor(c) ∈ dom(upButtonArray)
+    @grd15: upButtonArray(floor(c)) = TRUE
+	then
+    @act1: shaft (c) ≔ SHAFT_UP 
+    @act3: floorShaft ≔ ( floorShaft ∖ {floor(c) ↦ SHAFT_DOWN} ) ∪ ({floor(c) ↦ SHAFT_UP}) 
+	end
+
+	event CabinDownToUpInCabin refines CabinDownToUpInCabin
+	any
+    c 
+    m 
+    d 
+    b // floor above current
+	where
+    @grd1: c ∈ cabin 
+    @grd2: c ∈ dom (shaft) 
+    @grd3: c ∈ dom (floor) 
+    @grd4: shaft(c) = SHAFT_DOWN 
+    @grd5: floor (c) = 0 
+    @grd6: (0 ↦ SHAFT_UP) ∉ floorShaft 
+    @grd8: motor(c) = MOTOR_ON 
+    @grd9: c ↦ m ∈ motor 
+    @grd10: d ∈ DOOR_STATUS 
+    @grd11: c ↦ d ∈ door 
+    @grd12: door(c) = DOOR_CLOSED 
+    @grd13: (c ↦ floor (c))  ∉ floorButtons //current floor is not requested 
+    @grd14: b ∈ 1‥floor(c)
+    @grd15: (c ↦ b ) ∈ floorButtons  ∨ TRUE ∈ downButtonArray [1‥floor(c)] ∨ TRUE ∈ upButtonArray [1‥floor(c)−1] // a higher floor is requested 
+
+	then
+    @act1: shaft (c) ≔ SHAFT_UP 
+    @act3: floorShaft ≔ ( floorShaft ∖ {floor(c) ↦ SHAFT_DOWN} ) ∪ ({floor(c) ↦ SHAFT_UP}) 
+	end
+	
+	
+	event MotorStarts refines MotorStarts
+	any
+    c 
+    m 
+    d 
+    b
+	where
+    @grd1: c ∈ cabin 
+    @grd2: motor(c) = MOTOR_OFF 
+    @grd3: inBetweenFloorStatus (c) = ATFLOOR 
+    @grd4: c ↦ m ∈ motor 
+    @grd5: door(c) = DOOR_CLOSED 
+    @grd6: d ∈ DOOR_STATUS 
+    @grd7: c ↦ d ∈ door
+    // there are no request for this floor from inside the cabin 
+   	@grd8: (c ↦ floor(c))∈ floorButtons  
+   	@grd9: upButtonArray(floor(c)) = FALSE // there are no requests for this floor from another floor
+   	//theres a request to go up
+   	@grd14: b ∈ 0‥TOP_FLOOR
+    @grd10: shaft(c) = SHAFT_UP ⇒ (c ↦ b ) ∈ floorButtons ∨ TRUE ∈ upButtonArray[0‥TOP_FLOOR − 1]
+    //theres a request to go down
+    @grd11: shaft(c) = SHAFT_DOWN ⇒ (c ↦ b ) ∈ floorButtons ∨ TRUE ∈ downButtonArray[1‥TOP_FLOOR]
+	then
+    @act1: motor(c) ≔ MOTOR_ON 
+	end
+
+
+	event MotorStopsOnRequest refines  MotorStopsOnRequest
+	any
+    c 
+    m 
+    d 
+	where
+    @grd1: c ∈ cabin 
+    @grd2: motor(c) = MOTOR_ON 
+    @grd3: inBetweenFloorStatus (c) = ATFLOOR 
+    @grd4: c ↦ m ∈ motor 
+    @grd5: d ∈ DOOR_STATUS 
+    @grd6: c ↦ d ∈ door 
+    //current floor button is requested from inside cabin or on outside
+    @grd7: shaft(c) = SHAFT_UP ⇒  (c ↦ floor(c))∈ floorButtons  ∨ upButtonArray(floor(c)) = TRUE
+    @grd8: shaft(c) = SHAFT_DOWN ⇒ (c ↦ floor(c))∈ floorButtons  ∨ downButtonArray(floor(c)) = TRUE
+	then
+    @act1: motor(c) ≔ MOTOR_OFF 
+	end
+
+	event MotorStopsNoRequest refines MotorStopsNoRequest
+	any
+    c 
+    m 
+    d 
+	where
+    @grd1: c ∈ cabin 
+    @grd2: motor(c) = MOTOR_ON 
+    @grd3: inBetweenFloorStatus (c) = ATFLOOR 
+    @grd4: c ↦ m ∈ motor 
+    @grd5: d ∈ DOOR_STATUS 
+    @grd6: c ↦ d ∈ door 
+    @grd7: shaft(c) = SHAFT_UP ⇒ (c ↦ floor(c))∈ floorButtons  ∧ TRUE ∉ upButtonArray[floor(c) + 1 ‥ TOP_FLOOR − 1] ∧ TRUE ∉ downButtonArray[floor(c) + 1 ‥ TOP_FLOOR]
+    @grd8: shaft(c) = SHAFT_DOWN ⇒ (c ↦ floor(c))∈ floorButtons ∧ TRUE ∉ upButtonArray[0‥floor(c) − 1] ∧ TRUE ∉ downButtonArray[0‥floor(c) − 1]
+	then
+    @act1: motor(c) ≔ MOTOR_OFF 
+	end
+	
+	
+	event DoorClosedToHalfUp refines DoorClosedToHalfUp	
+	any
+    c 
+    d 
+    f 
+	where
+    @grd1: c ∈ cabin 
+    @grd2: door(c) = DOOR_CLOSED 
+    @grd3: inBetweenFloorStatus (c) = ATFLOOR 
+    @grd4: d ∈ DOOR_STATUS 
+    @grd5: c ↦ d ∈ door 
+    @grd6: shaft(c) = SHAFT_UP
+    @grd: f ∈ 0‥TOP_FLOOR
+    @grd7: f = floor(c)
+    @grd8: (c ↦ f ) ∈ floorButtons ∨ upButtonArray(f) = TRUE  //floor button is pressed
+	then
+    @act1: door(c) ≔ DOOR_HALFOPEN 
+    // @act2: floorButtonArray (c ↦ floor(c)) ≔ FALSE  floorButtonArray ≔ floorButtonArray ∖ {c ↦ f}  remove from floor buttons array
+    @act3: upButtonArray(f) ≔ FALSE
+	end
+	
+	event DoorClosedToHalfDown refines DoorClosedToHalfDown  
+	any
+    c 
+    d 
+    f
+	where
+    @grd1: c ∈ cabin 
+    @grd2: door(c) = DOOR_CLOSED 
+    @grd3: inBetweenFloorStatus (c) = ATFLOOR 
+    @grd4: d ∈ DOOR_STATUS 
+    @grd5: c ↦ d ∈ door 
+    @grd6: shaft(c) = SHAFT_DOWN
+    @grd: f ∈ 0‥TOP_FLOOR
+    @grd7: f = floor(c)
+    @grd8: (c ↦ f ) ∈ floorButtons ∨ downButtonArray(f) = TRUE  //floor button is pressed
+	then
+    @act1: door(c) ≔ DOOR_HALFOPEN 
+     // @act2: floorButtonArray (c ↦ floor(c)) ≔ FALSE  remove from floor buttons array
+    @act3: downButtonArray(f) ≔ FALSE
+	end
+
+	
+	event DoorHalfToOpenUp refines DoorHalfToOpenUp	
+	any
+    c 
+    d 
+	where
+    @grd1: c ∈ cabin 
+    @grd2: door(c) = DOOR_HALFOPEN 
+    @grd3: d ∈ DOOR_STATUS 
+    @grd4: c ↦ d ∈ door 
+    @grd: motor (c) = MOTOR_ON 
+    @grd5: shaft(c) = SHAFT_UP
+	then
+    @act1: door(c) ≔ DOOR_OPEN 
+    // @act2: floorButtonArray (c ↦ floor(c)) ≔ FALSE  remove from floor buttons array
+    @act3:upButtonArray(floor(c)) ≔ FALSE
+	end
+	
+	
+	event DoorHalfToOpenDown refines DoorHalfToOpenDown
+	any
+    c 
+    d 
+	where
+    @grd1: c ∈ cabin 
+    @grd2: door(c) = DOOR_HALFOPEN 
+    @grd3: d ∈ DOOR_STATUS 
+    @grd4: c ↦ d ∈ door 
+    @grd: motor (c) = MOTOR_ON 
+    @grd5: shaft(c) = SHAFT_DOWN
+	then
+    @act1: door(c) ≔ DOOR_OPEN 
+    // @act2: floorButtonArray (c ↦ floor(c)) ≔ FALSE  remove from floor buttons array
+    @act3:downButtonArray(floor(c)) ≔ FALSE
+	end
+
+
+	
+	event DoorOpenToHalfUp refines DoorOpenToHalfUp
+	any
+    c 
+    d 
+	where
+    @grd1: c ∈ cabin 
+    @grd2: door(c) = DOOR_OPEN 
+    @grd3: d ∈ DOOR_STATUS 
+    @grd4: c ↦ d ∈ door 
+    @grd: motor (c) = MOTOR_ON 
+    @grd6: (c ↦ floor(c) ) ∉ floorButtons
+    @grd7: shaft(c) = SHAFT_UP ⇒  upButtonArray(floor(c)) = FALSE
+	then
+    @act1: door(c) ≔ DOOR_HALFOPEN 
+	end
+	
+	
+	
+	event DoorOpenToHalfDown refines DoorOpenToHalfDown
+	any
+    c 
+    d 
+	where
+    @grd1: c ∈ cabin 
+    @grd2: door(c) = DOOR_OPEN 
+    @grd3: d ∈ DOOR_STATUS 
+    @grd4: c ↦ d ∈ door 
+    @grd: motor (c) = MOTOR_ON 
+    @grd6:  (c ↦ floor(c) ) ∉ floorButtons
+    @grd7: shaft(c) = SHAFT_DOWN ⇒ downButtonArray(floor(c)) = FALSE
+	then
+    @act1: door(c) ≔ DOOR_HALFOPEN 
+	end
+	
+	
+	event DoorHalfToClosed refines DoorHalfToClosed 
+	any
+    c 
+    d 
+    f
+	where
+    @grd1: c ∈ cabin 
+    @grd2: door(c) = DOOR_HALFOPEN 
+    @grd3: d ∈ DOOR_STATUS 
+    @grd4: c ↦ d ∈ door 
+    @grd: motor (c) = MOTOR_ON 
+    @grd5: c ∈ cabin
+    @grd6: f ∈ 0‥TOP_FLOOR
+    @grd7: f = floor(c)
+    @grd8: (c ↦ f) ∉ floorButtons
+    @grd9: shaft(c) = SHAFT_UP ⇒ upButtonArray(floor(c)) = FALSE
+    @grd10: shaft(c) = SHAFT_DOWN ⇒ downButtonArray(floor(c)) = FALSE
+	then
+    @act1: door(c) ≔ DOOR_CLOSED 
+	end
+	
+	
+	event UserPressesUpButton refines UserPressesUpButton
+	any
+    f
+	where
+    @grd1: f ∈ 0‥TOP_FLOOR − 1
+    @grd2: upButtonArray(f) = FALSE
+    @grd3: cabin ≠ ∅
+	then
+    @act1: upButtonArray(f) ≔ TRUE
+	end
+
+	
+	event UserPressesDownButton refines UserPressesDownButton
+	any
+		f //requested floor 
+	where
+		@grd1: f ∈ 1‥TOP_FLOOR 
+		@grd2: downButtonArray(f) = FALSE  //floor down button is not already requested
+		@grd3: cabin ≠ ∅
+	then 
+		@act1: downButtonArray(f) ≔ TRUE
+	end
+	
+	event  UserPressesFloorButton refines UserPressesFloorButton
+	any 
+		f //floor button
+		c // cabin the button is pressed in
+		s
+		m
+		d
+	where
+		@grd1: f ∈ 0 ‥ TOP_FLOOR  //floor button for any floor
+		@grd2: c ∈ cabin
+		@grd3: {c ↦ f} ∉ dom(floorButtonArray) // (c ↦ f) ∉ floorButton  //requested floor is not the current floor
+		@grd4: c ↦ s ∈ shaft
+    	@grd5: c ↦ m ∈ motor
+    	@grd6: c ↦ d ∈ door
+	then
+		@act1: floorButtonArray {c ↦ f} ≔ TRUE  
+	end
+	
+	
+end
