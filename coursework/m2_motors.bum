@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xmachine.base" org.eventb.core.generated="false" version="5">
-    <org.eventb.core.refinesMachine name="_keaU4A0FEe-sV-utJgg0NA" org.eventb.core.target="m1_shafts"/>
-    <org.eventb.core.seesContext name="_kea78A0FEe-sV-utJgg0NA" org.eventb.core.target="cabin_context"/>
-    <org.eventb.core.seesContext name="_kea78Q0FEe-sV-utJgg0NA" org.eventb.core.target="shafts_context"/>
-    <org.eventb.core.seesContext name="_kea78g0FEe-sV-utJgg0NA" org.eventb.core.target="motors_context"/>
-    <org.eventb.core.variable name="_kebjAA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="cabin"/>
-    <org.eventb.core.variable name="_kebjAQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="floor"/>
-    <org.eventb.core.variable name="_kebjAg0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="inBetweenFloorStatus"/>
-    <org.eventb.core.variable name="_kecKEA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="shaft"/>
-    <org.eventb.core.variable name="_kecKEQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="floorShaft"/>
-    <org.eventb.core.variable name="_kecKEg0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="motor"/>
-    <org.eventb.core.invariant name="_kecKEw0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="typeof_motor" org.eventb.core.predicate="motor ∈ cabin → MOTOR_STATUS"/>
-    <org.eventb.core.invariant name="_kecxIA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="motor_shaft" org.eventb.core.predicate="∀ c · c ∈ cabin ∧ c ∈ dom(floor) ⇒ c ∈ dom(motor)"/>
-    <org.eventb.core.event name="_kecxIQ0FEe-sV-utJgg0NA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
-        <org.eventb.core.action name="_kecxIg0FEe-sV-utJgg0NA" org.eventb.core.assignment="motor ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_motor"/>
+    <org.eventb.core.refinesMachine name="_WuRpwA2dEe-QH7mZcVyEjw" org.eventb.core.target="m1_shafts"/>
+    <org.eventb.core.seesContext name="_WuRpwQ2dEe-QH7mZcVyEjw" org.eventb.core.target="cabin_context"/>
+    <org.eventb.core.seesContext name="_WuRpwg2dEe-QH7mZcVyEjw" org.eventb.core.target="shafts_context"/>
+    <org.eventb.core.seesContext name="_WuRpww2dEe-QH7mZcVyEjw" org.eventb.core.target="motors_context"/>
+    <org.eventb.core.variable name="_WuRpxA2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="cabin"/>
+    <org.eventb.core.variable name="_WuRpxQ2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="floor"/>
+    <org.eventb.core.variable name="_WuSQ0A2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="inBetweenFloorStatus"/>
+    <org.eventb.core.variable name="_WuSQ0Q2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="shaft"/>
+    <org.eventb.core.variable name="_WuSQ0g2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="floorShaft"/>
+    <org.eventb.core.variable name="_WuSQ0w2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="motor"/>
+    <org.eventb.core.invariant name="_WuSQ1A2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="typeof_motor" org.eventb.core.predicate="motor ∈ cabin → MOTOR_STATUS"/>
+    <org.eventb.core.invariant name="_WuSQ1Q2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="motor_shaft" org.eventb.core.predicate="∀ c · c ∈ cabin ∧ c ∈ dom(floor) ⇒ c ∈ dom(motor)"/>
+    <org.eventb.core.event name="_WuSQ1g2dEe-QH7mZcVyEjw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_WuSQ1w2dEe-QH7mZcVyEjw" org.eventb.core.assignment="motor ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_motor"/>
     </org.eventb.core.event>
-    <org.eventb.core.event name="_kecxIw0FEe-sV-utJgg0NA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinLeavesFloorGoingUp">
-        <org.eventb.core.refinesEvent name="_kedYMA0FEe-sV-utJgg0NA" org.eventb.core.target="CabinLeavesFloorGoingUp"/>
-        <org.eventb.core.parameter name="_kedYMQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="m"/>
-        <org.eventb.core.guard name="_kedYMg0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd10" org.eventb.core.predicate="motor(c) = MOTOR_ON"/>
-        <org.eventb.core.guard name="_kedYMw0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd11" org.eventb.core.predicate="c ↦ m ∈ motor"/>
+    <org.eventb.core.event name="_WuSQ2A2dEe-QH7mZcVyEjw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinLeavesFloorGoingUp">
+        <org.eventb.core.refinesEvent name="_WuSQ2Q2dEe-QH7mZcVyEjw" org.eventb.core.target="CabinLeavesFloorGoingUp"/>
+        <org.eventb.core.parameter name="_WuSQ2g2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="m"/>
+        <org.eventb.core.guard name="_WuSQ2w2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd10" org.eventb.core.predicate="motor(c) = MOTOR_ON"/>
+        <org.eventb.core.guard name="_WuSQ3A2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd11" org.eventb.core.predicate="c ↦ m ∈ motor"/>
     </org.eventb.core.event>
-    <org.eventb.core.event name="_ked_QA0FEe-sV-utJgg0NA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinReachesFloorGoingUp">
-        <org.eventb.core.refinesEvent name="_ked_QQ0FEe-sV-utJgg0NA" org.eventb.core.target="CabinReachesFloorGoingUp"/>
+    <org.eventb.core.event name="_WuSQ3Q2dEe-QH7mZcVyEjw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinReachesFloorGoingUp">
+        <org.eventb.core.refinesEvent name="_WuS34A2dEe-QH7mZcVyEjw" org.eventb.core.target="CabinReachesFloorGoingUp"/>
     </org.eventb.core.event>
-    <org.eventb.core.event name="_ked_Qg0FEe-sV-utJgg0NA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinLeavesFloorGoingDown">
-        <org.eventb.core.refinesEvent name="_ked_Qw0FEe-sV-utJgg0NA" org.eventb.core.target="CabinLeavesFloorGoingDown"/>
-        <org.eventb.core.parameter name="_ked_RA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="m"/>
-        <org.eventb.core.guard name="_ked_RQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd10" org.eventb.core.predicate="motor(c) = MOTOR_ON"/>
-        <org.eventb.core.guard name="_keemUA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd11" org.eventb.core.predicate="c ↦ m ∈ motor"/>
+    <org.eventb.core.event name="_WuS34Q2dEe-QH7mZcVyEjw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinLeavesFloorGoingDown">
+        <org.eventb.core.refinesEvent name="_WuS34g2dEe-QH7mZcVyEjw" org.eventb.core.target="CabinLeavesFloorGoingDown"/>
+        <org.eventb.core.parameter name="_WuS34w2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="m"/>
+        <org.eventb.core.guard name="_WuS35A2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd10" org.eventb.core.predicate="motor(c) = MOTOR_ON"/>
+        <org.eventb.core.guard name="_WuS35Q2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd11" org.eventb.core.predicate="c ↦ m ∈ motor"/>
     </org.eventb.core.event>
-    <org.eventb.core.event name="_keemUQ0FEe-sV-utJgg0NA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinReachesFloorGoingDown">
-        <org.eventb.core.refinesEvent name="_keemUg0FEe-sV-utJgg0NA" org.eventb.core.target="CabinReachesFloorGoingDown"/>
+    <org.eventb.core.event name="_WuS35g2dEe-QH7mZcVyEjw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinReachesFloorGoingDown">
+        <org.eventb.core.refinesEvent name="_WuS35w2dEe-QH7mZcVyEjw" org.eventb.core.target="CabinReachesFloorGoingDown"/>
     </org.eventb.core.event>
-    <org.eventb.core.event name="_keemUw0FEe-sV-utJgg0NA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="AddCabin">
-        <org.eventb.core.refinesEvent name="_kefNYA0FEe-sV-utJgg0NA" org.eventb.core.target="AddCabin"/>
-        <org.eventb.core.guard name="_kefNYQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="c ∉ dom(motor)"/>
-        <org.eventb.core.guard name="_kefNYg0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="c ∉ dom(inBetweenFloorStatus)"/>
-        <org.eventb.core.guard name="_kefNYw0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd" org.eventb.core.predicate="c ∈ dom(floor)"/>
-        <org.eventb.core.action name="_kef0cA0FEe-sV-utJgg0NA" org.eventb.core.assignment="motor ≔ motor ∪ {c ↦ MOTOR_ON}" org.eventb.core.generated="false" org.eventb.core.label="act7"/>
+    <org.eventb.core.event name="_WuS36A2dEe-QH7mZcVyEjw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="AddCabin">
+        <org.eventb.core.refinesEvent name="_WuS36Q2dEe-QH7mZcVyEjw" org.eventb.core.target="AddCabin"/>
+        <org.eventb.core.guard name="_WuS36g2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="c ∉ dom(motor)"/>
+        <org.eventb.core.guard name="_WuS36w2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="c ∉ dom(inBetweenFloorStatus)"/>
+        <org.eventb.core.guard name="_WuS37A2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd" org.eventb.core.predicate="c ∈ dom(floor)"/>
+        <org.eventb.core.action name="_WuS37Q2dEe-QH7mZcVyEjw" org.eventb.core.assignment="motor ≔ motor ∪ {c ↦ MOTOR_ON}" org.eventb.core.generated="false" org.eventb.core.label="act7"/>
     </org.eventb.core.event>
-    <org.eventb.core.event name="_kef0cQ0FEe-sV-utJgg0NA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="RemoveCabin">
-        <org.eventb.core.refinesEvent name="_kef0cg0FEe-sV-utJgg0NA" org.eventb.core.target="RemoveCabin"/>
-        <org.eventb.core.guard name="_kef0cw0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd8" org.eventb.core.predicate="c ∈ dom (motor)"/>
-        <org.eventb.core.guard name="_kegbgA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd9" org.eventb.core.predicate="motor(c) = MOTOR_ON"/>
-        <org.eventb.core.action name="_kegbgQ0FEe-sV-utJgg0NA" org.eventb.core.assignment="motor ≔ {c} ⩤ motor" org.eventb.core.generated="false" org.eventb.core.label="act7"/>
+    <org.eventb.core.event name="_WuS37g2dEe-QH7mZcVyEjw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="RemoveCabin">
+        <org.eventb.core.refinesEvent name="_WuS37w2dEe-QH7mZcVyEjw" org.eventb.core.target="RemoveCabin"/>
+        <org.eventb.core.guard name="_WuS38A2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd8" org.eventb.core.predicate="c ∈ dom (motor)"/>
+        <org.eventb.core.guard name="_WuS38Q2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd9" org.eventb.core.predicate="motor(c) = MOTOR_ON"/>
+        <org.eventb.core.action name="_WuS38g2dEe-QH7mZcVyEjw" org.eventb.core.assignment="motor ≔ {c} ⩤ motor" org.eventb.core.generated="false" org.eventb.core.label="act7"/>
     </org.eventb.core.event>
-    <org.eventb.core.event name="_kegbgg0FEe-sV-utJgg0NA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinUpToDown">
-        <org.eventb.core.refinesEvent name="_kegbgw0FEe-sV-utJgg0NA" org.eventb.core.target="CabinUpToDown"/>
-        <org.eventb.core.parameter name="_kegbhA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="m"/>
-        <org.eventb.core.guard name="_kehCkA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd8" org.eventb.core.predicate="motor(c) = MOTOR_ON"/>
-        <org.eventb.core.guard name="_kehCkQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd9" org.eventb.core.predicate="c ↦ m ∈ motor"/>
+    <org.eventb.core.event name="_WuS38w2dEe-QH7mZcVyEjw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinUpToDown">
+        <org.eventb.core.refinesEvent name="_WuTe8A2dEe-QH7mZcVyEjw" org.eventb.core.target="CabinUpToDown"/>
+        <org.eventb.core.parameter name="_WuTe8Q2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="m"/>
+        <org.eventb.core.guard name="_WuTe8g2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd8" org.eventb.core.predicate="motor(c) = MOTOR_ON"/>
+        <org.eventb.core.guard name="_WuTe8w2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd9" org.eventb.core.predicate="c ↦ m ∈ motor"/>
     </org.eventb.core.event>
-    <org.eventb.core.event name="_kehCkg0FEe-sV-utJgg0NA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinDownToUp">
-        <org.eventb.core.refinesEvent name="_kehCkw0FEe-sV-utJgg0NA" org.eventb.core.target="CabinDownToUp"/>
-        <org.eventb.core.parameter name="_kehpoA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="m"/>
-        <org.eventb.core.guard name="_kehpoQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd8" org.eventb.core.predicate="motor(c) = MOTOR_ON"/>
-        <org.eventb.core.guard name="_kehpog0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd9" org.eventb.core.predicate="c ↦ m ∈ motor"/>
+    <org.eventb.core.event name="_WuTe9A2dEe-QH7mZcVyEjw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CabinDownToUp">
+        <org.eventb.core.refinesEvent name="_WuTe9Q2dEe-QH7mZcVyEjw" org.eventb.core.target="CabinDownToUp"/>
+        <org.eventb.core.parameter name="_WuTe9g2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="m"/>
+        <org.eventb.core.guard name="_WuTe9w2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd8" org.eventb.core.predicate="motor(c) = MOTOR_ON"/>
+        <org.eventb.core.guard name="_WuTe-A2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd9" org.eventb.core.predicate="c ↦ m ∈ motor"/>
     </org.eventb.core.event>
-    <org.eventb.core.event name="_kehpow0FEe-sV-utJgg0NA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="MotorStarts">
-        <org.eventb.core.parameter name="_keiQsA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="c"/>
-        <org.eventb.core.parameter name="_keiQsQ0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="m"/>
-        <org.eventb.core.guard name="_keiQsg0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ cabin"/>
-        <org.eventb.core.guard name="_keiQsw0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="motor(c) = MOTOR_OFF"/>
-        <org.eventb.core.guard name="_keiQtA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="inBetweenFloorStatus (c) = ATFLOOR"/>
-        <org.eventb.core.guard name="_kei3wA0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="c ↦ m ∈ motor"/>
-        <org.eventb.core.action name="_kei3wQ0FEe-sV-utJgg0NA" org.eventb.core.assignment="motor(c) ≔ MOTOR_ON" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    <org.eventb.core.event name="_WuTe-Q2dEe-QH7mZcVyEjw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="MotorStarts">
+        <org.eventb.core.parameter name="_WuTe-g2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="c"/>
+        <org.eventb.core.parameter name="_WuTe-w2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="m"/>
+        <org.eventb.core.guard name="_WuTe_A2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ cabin"/>
+        <org.eventb.core.guard name="_WuTe_Q2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="motor(c) = MOTOR_OFF"/>
+        <org.eventb.core.guard name="_WuTe_g2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="inBetweenFloorStatus (c) = ATFLOOR"/>
+        <org.eventb.core.guard name="_WuTe_w2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="c ↦ m ∈ motor"/>
+        <org.eventb.core.action name="_WuUGAA2dEe-QH7mZcVyEjw" org.eventb.core.assignment="motor(c) ≔ MOTOR_ON" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
     </org.eventb.core.event>
-    <org.eventb.core.event name="_kei3wg0FEe-sV-utJgg0NA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="MotorStops">
-        <org.eventb.core.parameter name="_kei3ww0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="c"/>
-        <org.eventb.core.parameter name="_keje0A0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.identifier="m"/>
-        <org.eventb.core.guard name="_keje0Q0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ cabin"/>
-        <org.eventb.core.guard name="_keje0g0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="motor(c) = MOTOR_ON"/>
-        <org.eventb.core.guard name="_keje0w0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="inBetweenFloorStatus (c) = ATFLOOR"/>
-        <org.eventb.core.guard name="_kekF4A0FEe-sV-utJgg0NA" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="c ↦ m ∈ motor"/>
-        <org.eventb.core.action name="_kekF4Q0FEe-sV-utJgg0NA" org.eventb.core.assignment="motor(c) ≔ MOTOR_OFF" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    <org.eventb.core.event name="_WuUGAQ2dEe-QH7mZcVyEjw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="MotorStops">
+        <org.eventb.core.parameter name="_WuUGAg2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="c"/>
+        <org.eventb.core.parameter name="_WuUGAw2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.identifier="m"/>
+        <org.eventb.core.guard name="_WuUGBA2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ cabin"/>
+        <org.eventb.core.guard name="_WuUGBQ2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="motor(c) = MOTOR_ON"/>
+        <org.eventb.core.guard name="_WuUGBg2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="inBetweenFloorStatus (c) = ATFLOOR"/>
+        <org.eventb.core.guard name="_WuUGBw2dEe-QH7mZcVyEjw" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="c ↦ m ∈ motor"/>
+        <org.eventb.core.action name="_WuUGCA2dEe-QH7mZcVyEjw" org.eventb.core.assignment="motor(c) ≔ MOTOR_OFF" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
     </org.eventb.core.event>
 </org.eventb.core.machineFile>

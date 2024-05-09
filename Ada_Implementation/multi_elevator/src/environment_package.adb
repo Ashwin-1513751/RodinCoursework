@@ -63,6 +63,10 @@ package body Environment_Package with SPARK_Mode is
       while CN < cabins_array'Length loop
       	
          pragma Loop_Invariant (Invariants(cabins_array, up_buttons_array, down_buttons_array));
+        
+
+         -- if CN = 1 then (for some I in 1 => (cabins_array(I).floor /= 0 and cabins_array(I).shaft /= Up))))
+
          pragma Loop_Variant (Increases => CN);
          if (cabins_array(CN).shaft = Up and cabins_array(CN).floor = 0) then
             return True;
@@ -80,12 +84,30 @@ package body Environment_Package with SPARK_Mode is
       -- pragma Loop_Variant (...)
       -- pragma Loop_Invariants (...)
       while CN < cabins_array'Length loop
-      	 
+      	
          pragma Loop_Invariant (Invariants(cabins_array, up_buttons_array, down_buttons_array));
+
+        
          pragma Loop_Variant (Increases => CN);
-         if (cabins_array(CN).shaft = Down and cabins_array(CN).floor = TOP_FLOOR) then
-            return True;
+
+        if CN > 1 then
+            if cabins_array(CN-1).shaft = Down and cabins_array(CN-1).floor = TOP_FLOOR then
+               return True;
+            end if;
+         else
+            if CN = 1 then 
+               if cabins_array(2).shaft = Down and cabins_array(2).floor = TOP_FLOOR then
+                     return True;
+               end if;
+            else
+               return False;
+            end if; 
          end if;
+
+
+         
+
+
          CN := CN + 1;
       end loop;
       return False;
